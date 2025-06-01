@@ -47,7 +47,7 @@ const ContactSection = () => {
             Get In <span className="text-orange-500">Touch</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Ready to scale your e-commerce business? Let's discuss how we can help you achieve
+            Ready to scale your e-commerce business? Let&apos;s discuss how we can help you achieve
             breakthrough growth with our proven strategies.
           </p>
         </div>
@@ -239,7 +239,7 @@ const ContactSection = () => {
 
               <div className="mt-8 p-4 bg-orange-500 bg-opacity-10 rounded-lg border border-orange-500">
                 <p className="text-black font-semibold text-center">
-                  🚀 Ready to 10x your revenue? Let's talk!
+                  🚀 Ready to 10x your revenue? Let&apos;s talk!
                 </p>
               </div>
             </div>
