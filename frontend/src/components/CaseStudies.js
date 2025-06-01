@@ -57,7 +57,7 @@ export default function CaseStudies() {
         { label: "Page Load Speed", before: "8.4s", after: "3.2s", change: "-62%" }
       ],
       testimonial: {
-        quote: "Our new Shopify store is a game-changer. The mobile experience is fantastic and our sales have tripled. Best investment we've made.",
+        quote: "Our new Shopify store is a game-changer. The mobile experience is fantastic and our sales have tripled. Best investment we&apos;ve made.",
         author: "Marcus Chen",
         position: "E-commerce Director"
       }
@@ -113,7 +113,7 @@ export default function CaseStudies() {
             Case Studies That<br />Prove Our Impact
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Real businesses, real results. See how we've helped companies across different industries achieve remarkable growth through strategic digital marketing.
+            Real businesses, real results. See how we&apos;ve helped companies across different industries achieve remarkable growth through strategic digital marketing.
           </p>
         </div>
       </section>
@@ -316,7 +316,7 @@ export default function CaseStudies() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-900">Ready to Be Our Next Success Story?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            These results aren't accidents – they're the outcome of proven strategies and dedicated expertise. Let's discuss how we can achieve similar growth for your business.
+            These results aren&apos;t accidents – they&apos;re the outcome of proven strategies and dedicated expertise. Let&apos;s discuss how we can achieve similar growth for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg">

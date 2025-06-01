@@ -100,7 +100,7 @@ export default function FAQ() {
             Frequently Asked<br />Questions
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Get answers to common questions about our digital marketing services, pricing, and process. Can't find what you're looking for? We're here to help.
+            Get answers to common questions about our digital marketing services, pricing, and process. Can&apos;t find what you&apos;re looking for? We&apos;re here to help.
           </p>
         </div>
       </section>

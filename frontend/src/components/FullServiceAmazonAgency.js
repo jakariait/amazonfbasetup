@@ -19,7 +19,7 @@ export default function FullServiceAmazonAgency() {
       services: [
         { name: "Amazon Account Setup & Registration", description: "Complete account creation and brand registry" },
         { name: "Account Health Monitoring", description: "Proactive monitoring and issue resolution" },
-        { name: "Policy Compliance Management", description: "Ensure adherence to Amazon's terms and policies" },
+        { name: "Policy Compliance Management", description: "Ensure adherence to Amazon&apos;s terms and policies" },
         { name: "Account Reinstatement", description: "Expert assistance with suspended accounts" }
       ]
     },
@@ -140,7 +140,7 @@ export default function FullServiceAmazonAgency() {
             Your Complete Amazon<br />Success Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From account setup to million-dollar sales, we're the only Amazon agency you'll ever need. Our comprehensive services handle every aspect of your Amazon business so you can focus on what you do best.
+            From account setup to million-dollar sales, we&apos;re the only Amazon agency you&apos;ll ever need. Our comprehensive services handle every aspect of your Amazon business so you can focus on what you do best.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg">
@@ -159,7 +159,7 @@ export default function FullServiceAmazonAgency() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Trusted by Amazon Sellers Worldwide</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself. We've helped hundreds of businesses succeed on Amazon.
+              Our track record speaks for itself. We&apos;ve helped hundreds of businesses succeed on Amazon.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -225,7 +225,7 @@ export default function FullServiceAmazonAgency() {
             <h2 className="text-4xl font-bold mb-6 text-gray-900">We Serve Every Type of Amazon Business</h2>
             <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Whether you're just starting or managing a multi-million dollar Amazon business, we have the expertise to help you succeed.
+              Whether you&apos;re just starting or managing a multi-million dollar Amazon business, we have the expertise to help you succeed.
             </p>
           </div>
 
@@ -266,7 +266,7 @@ export default function FullServiceAmazonAgency() {
             <h2 className="text-4xl font-bold mb-6 text-gray-900">Our Proven Success Process</h2>
             <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              A systematic approach that's helped hundreds of businesses achieve Amazon success
+              A systematic approach that&apos;s helped hundreds of businesses achieve Amazon success
             </p>
           </div>
 
@@ -319,7 +319,7 @@ export default function FullServiceAmazonAgency() {
                   },
                   {
                     title: "Transparent Reporting",
-                    description: "Clear, detailed reports showing exactly what we're doing and the results we're achieving."
+                    description: "Clear, detailed reports showing exactly what we&apos;re doing and the results we&apos;re achieving."
                   },
                   {
                     title: "Proven Track Record",
@@ -327,7 +327,7 @@ export default function FullServiceAmazonAgency() {
                   },
                   {
                     title: "Future-Proof Strategies",
-                    description: "We stay ahead of Amazon's changes and algorithm updates to keep your business competitive."
+                    description: "We stay ahead of Amazon&apos;s changes and algorithm updates to keep your business competitive."
                   }
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start">
@@ -380,7 +380,7 @@ export default function FullServiceAmazonAgency() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-6 text-gray-900">Ready to Transform Your Amazon Business?</h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join hundreds of successful Amazon sellers who trust us to handle their complete Amazon operations. Let's discuss how we can accelerate your Amazon success.
+            Join hundreds of successful Amazon sellers who trust us to handle their complete Amazon operations. Let&apos;s discuss how we can accelerate your Amazon success.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg">

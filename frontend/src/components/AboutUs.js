@@ -76,7 +76,7 @@ export default function AboutUs() {
             Not Just Traffic
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Your success is our obsession. We're a team of data-driven digital
+            Your success is our obsession. We&apos;re a team of data-driven digital
             marketing specialists who focus exclusively on one thing: maximizing
             your return on investment through proven strategies in Amazon FBA,
             Shopify, and Meta Ads.
@@ -123,15 +123,15 @@ export default function AboutUs() {
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               What started as a small team of Amazon FBA specialists has grown
-              into a comprehensive digital marketing powerhouse. We've helped
+              into a comprehensive digital marketing powerhouse. We&apos;ve helped
               over 500 businesses transform their online presence, generating
               more than $50 million in additional revenue through our strategic
               approach to Amazon optimization, Shopify development, and Meta
               advertising.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Today, we're proud to be the agency that business owners trust
-              when they're serious about growth. We don't just run campaigns –
+              Today, we&apos;re proud to be the agency that business owners trust
+              when they&apos;re serious about growth. We don&apos;t just run campaigns –
               we become your growth partners, invested in your success because
               your wins are our wins.
             </p>
@@ -222,7 +222,7 @@ export default function AboutUs() {
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             Join hundreds of successful businesses who trust us to maximize
-            their digital marketing ROI. Let's discuss how we can accelerate
+            their digital marketing ROI. Let&apos;s discuss how we can accelerate
             your growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
