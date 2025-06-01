@@ -256,7 +256,7 @@ export default function CaseStudies() {
 
             return (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 text-center">
-                <div className="text-2xl text-orange-500 font-bold mb-4">"</div>
+                <div className="text-2xl text-orange-500 font-bold mb-4">&quot;</div>
                 <blockquote className="text-xl text-gray-700 leading-relaxed mb-6 italic">
                   {study.testimonial.quote}
                 </blockquote>
