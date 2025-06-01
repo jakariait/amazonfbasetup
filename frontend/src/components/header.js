@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import {getBrandName} from "@/utils/brand";
+import {getBrandLogo, getBrandName} from "@/utils/brand";
 
 const menuItems = [
   {
@@ -108,7 +108,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <img
-            src="/20250514_224704.png"
+            src={getBrandLogo()}
             alt={getBrandName()}
             className="w-40 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
           />

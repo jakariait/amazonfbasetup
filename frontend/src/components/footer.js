@@ -1,0 +1,81 @@
+import React from "react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import {getBrandLogo, getBrandName} from "@/utils/brand";
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const socialLinks = [
+    {
+      icon: Facebook,
+      href: "https://facebook.com/yourcompany",
+      label: "Facebook",
+    },
+    {
+      icon: Instagram,
+      href: "https://instagram.com/yourcompany",
+      label: "Instagram",
+    },
+    {
+      icon: Linkedin,
+      href: "https://linkedin.com/company/yourcompany",
+      label: "LinkedIn",
+    },
+    {
+      icon: Twitter,
+      href: "https://twitter.com/yourcompany",
+      label: "Twitter",
+    },
+  ];
+
+  return (
+    <footer className="bg-orange-100 px-4 py-3">
+      {/* Bottom Section */}
+      <div className="xl:container xl:mx-auto  flex flex-col justify-between">
+        <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+          {/* Logo/Brand */}
+          <div className="flex flex-col items-center justify-center">
+            <img
+              src={getBrandLogo()}
+              alt={getBrandName()}
+              className="w-30 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+            />
+            <p className="text-black text-sm mt-1">E-commerce Growth Experts</p>
+          </div>
+
+          {/* Social Media Links */}
+          <div className="flex items-center space-x-4">
+            <span className="text-black text-sm mr-2">Follow us:</span>
+            {socialLinks.map((social, index) => {
+              const IconComponent = social.icon;
+              return (
+                <a
+                  key={index}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-black hover:text-orange-500 p-3 rounded-xl transition-all duration-300 transform hover:scale-110"
+                  aria-label={social.label}
+                >
+                  <IconComponent className="w-5 h-5" />
+                </a>
+              );
+            })}
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center md:text-right">
+            <p className="text-black text-sm">
+              © {currentYear} {getBrandName()}. All rights reserved.
+            </p>
+            <p className="text-black text-xs mt-1">
+              Trusted by 500+ e-commerce brands worldwide
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
