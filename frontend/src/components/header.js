@@ -7,21 +7,20 @@ import {getBrandLogo, getBrandName} from "@/utils/brand";
 const menuItems = [
   {
     name: "About Us",
-    path: "about",
+    path: "about-us",
   },
   {
     name: "Services",
     path: "services",
     subItems: [
-      { name: "Amazon FBA", path: "/amazon-fba" },
+      { name: "Amazon FBA", path: "/amazon" },
       { name: "Shopify", path: "/shopify" },
       { name: "Meta", path: "/meta" },
     ],
   },
   { name: "Success Story", path: "success-story" },
-  { name: "Pricing", path: "pricing" },
   { name: "FAQs", path: "faqs" },
-  { name: "Contact Us", path: "contact" },
+  { name: "Contact Us", path: "contact-us" },
 ];
 
 export default function Header() {
@@ -103,7 +102,7 @@ export default function Header() {
   }, []);
 
   return (
-    <nav className="border-b border-orange-500 px-4 sticky top-0 z-50 bg-white">
+    <nav className="border-b border-orange-500 px-4 sticky top-0 z-50 bg-white ">
       <div className="xl:container xl:mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -304,7 +303,7 @@ export default function Header() {
                   </>
                 ) : (
                   <Link
-                    href={`#${item.path}`}
+                    href={`${item.path}`}
                     onClick={() => setDrawerOpen(false)}
                     className="block py-4 px-2 uppercase font-medium hover:text-orange-400 focus:text-orange-400 transition-colors duration-200"
                   >
