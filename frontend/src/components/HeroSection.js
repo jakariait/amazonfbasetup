@@ -13,20 +13,18 @@ const HeroSection = () => {
             Get Your Products Discovered & Selling on Amazon
           </h1>
           <p className="text-lg text-gray-700 mb-8">
-            Amazing product but not seeing enough traction? Our Amazon experts
-            help you get visibility, boost rankings, and grow sales without the
-            guesswork.
+            We&#39;ve helped countless brands cut through the noise and succeed on Amazon. From boosting rankings to driving consistent sales, our team knows what works—because We&#39;ve done it before. Let us help you turn your great product into a best-seller, without the guesswork.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <div className="flex flex-col md:flex-row gap-4 justify-center ">
             <Link href="/contact-us">
-              <button className="bg-orange-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105">
+              <button className="bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 cursor-pointer">
                 Boost My Amazon Sales
               </button>
             </Link>
 
-            <Link href="/amazon-help">
-              <button className="border-2 border-orange-500 text-orange-500 px-8 py-4 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105">
+            <Link href="/amazon">
+              <button className="border-2 border-orange-500 text-orange-500 px-4 py-2 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer">
                 Solve My Amazon Problem
               </button>
             </Link>
@@ -44,7 +42,6 @@ const HeroSection = () => {
           />
         </div>
       </div>
-
     </section>
   );
 };
