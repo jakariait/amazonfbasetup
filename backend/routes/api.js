@@ -6,6 +6,7 @@ const contactController = require("../controllers/ContactController");
 const AdminController = require("../controllers/AdminController");
 
 const FaqController = require("../controllers/FaqController");
+const BrandController = require("../controllers/BrandController");
 
 // Admin
 const { adminProtect } = require("../middlewares/authAdminMiddleware");
@@ -38,7 +39,7 @@ const upload = multer({ storage }).fields([
   },
   {
     name: "imgSrc",
-    maxCount: 1,
+    maxCount: 20,
   },
   {
     name: "categoryIcon",
@@ -93,5 +94,25 @@ router.post(
 
   FaqController.createFAQ,
 );
+
+//  Routes for Carousel
+router.post(
+  "/createcarousel",
+  upload,
+  adminProtect,
+  BrandController.createCarousel,
+);
+router.get("/getallcarousel", BrandController.getAllCarousel);
+
+router.delete(
+  "/deletebyidcarousel/:id",
+  adminProtect,
+  BrandController.deleteByIdCarousel,
+);
+
+
+
+
+
 
 module.exports = router;

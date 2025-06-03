@@ -24,3 +24,29 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ===== Marquee Animation ===== */
+@layer utilities {
+  .marquee-wrapper {
+    @apply overflow-hidden whitespace-nowrap w-full;
+  }
+
+  .marquee-track {
+    display: inline-flex;
+    animation: scroll-left 20s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+}
