@@ -5,11 +5,13 @@ import OurExpertise from "@/components/OurExpertise";
 import ReadyToScaleCta from "@/components/ReadyToScaleCTA";
 import React from "react";
 import ResultsWeGet from "@/components/ResultsWeGet";
+import StatsAll from "@/components/StatsAll";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <StatsAll/>
       <BrandsWeWorkWith />
       <ResultsWeGet/>
       <OurExpertise />
