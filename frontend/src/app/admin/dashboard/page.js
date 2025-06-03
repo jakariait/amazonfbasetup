@@ -3,6 +3,7 @@ import React from "react";
 import AdminList from "@/components/AdminList";
 import ContactTable from "@/components/ContactTable";
 import CarouselUpload from "@/components/BrandUpload";
+import ResultsUpload from "@/components/ResultsUpload";
 
 const Page = () => {
   return (
@@ -10,6 +11,7 @@ const Page = () => {
       <AdminList />
       <ContactTable/>
       <CarouselUpload/>
+      <ResultsUpload/>
     </div>
   );
 };

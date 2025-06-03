@@ -1,15 +1,10 @@
 import React from "react";
-import {
-  TrendingUp,
-  Users,
-  Award,
-  Target,
-  ShoppingCart,
-  Store,
-  Share2,
-} from "lucide-react";
+import { TrendingUp, Users, Award, Target } from "lucide-react";
 import { getCalendlyLink } from "@/utils/brand";
 import Link from "next/link";
+import OurExpertise from "@/components/OurExpertise";
+import BrandsWeWorkWith from "@/components/BrandsWeWorkWith";
+import ReadyToScaleCta from "@/components/ReadyToScaleCTA";
 
 export default function AboutUs() {
   const stats = [
@@ -17,27 +12,6 @@ export default function AboutUs() {
     { number: "300%", label: "Average ROI Increase", icon: TrendingUp },
     { number: "50M+", label: "Revenue Generated", icon: Target },
     { number: "5+", label: "Years Experience", icon: Award },
-  ];
-
-  const services = [
-    {
-      icon: ShoppingCart,
-      title: "Amazon FBA",
-      description:
-        "Complete Amazon optimization from product research to PPC campaigns that drive profitable sales.",
-    },
-    {
-      icon: Store,
-      title: "Shopify Development",
-      description:
-        "Custom Shopify stores designed for conversion with seamless user experiences and mobile optimization.",
-    },
-    {
-      icon: Share2,
-      title: "Meta Ads",
-      description:
-        "Data-driven Facebook and Instagram advertising campaigns that maximize your ad spend ROI.",
-    },
   ];
 
   const team = [
@@ -107,6 +81,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
+      <BrandsWeWorkWith />
 
       {/* Our Story Section */}
       <section className="py-20 px-4">
@@ -141,42 +116,7 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Our Expertise
-            </h2>
-            <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              We specialize in the three most profitable digital marketing
-              channels for e-commerce businesses
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {services.map((service, index) => {
-              const IconComponent = service.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white p-8 rounded-2xl border border-gray-200 hover:border-orange-500/50 transition-all duration-300 group shadow-sm hover:shadow-lg"
-                >
-                  <div className="w-16 h-16 mb-6 bg-orange-500/10 rounded-full flex items-center justify-center group-hover:bg-orange-500/20 transition-colors">
-                    <IconComponent className="w-8 h-8 text-orange-500" />
-                  </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-orange-500 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      <OurExpertise />
 
       {/* Team Section */}
       <section className="py-20 px-4">
@@ -217,34 +157,7 @@ export default function AboutUs() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-orange-500/5 to-transparent">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6 text-gray-900">
-            Ready to Scale Your Business?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join hundreds of successful businesses who trust us to maximize
-            their digital marketing ROI. Let&apos;s discuss how we can
-            accelerate your growth.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={getCalendlyLink()}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
-                Schedule Free Consultation
-              </button>
-            </a>
-            <Link href="/success-story">
-              <button className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer">
-                View Case Studies
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <ReadyToScaleCta />
     </div>
   );
 }

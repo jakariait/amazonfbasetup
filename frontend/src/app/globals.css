@@ -37,6 +37,13 @@ body {
     will-change: transform;
   }
 
+  .marquee-track-2 {
+    display: inline-flex;
+    gap: 2.5rem; /* tailwind gap-10 */
+    animation: scroll-right 20s linear infinite;
+    will-change: transform;
+  }
+
   @keyframes scroll-left {
     0% {
       transform: translateX(0%);
@@ -46,7 +53,18 @@ body {
     }
   }
 
-  .marquee-track:hover {
+  @keyframes scroll-right {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  /* ✅ Pause animation on hover */
+  .marquee-wrapper:hover .marquee-track,
+  .marquee-wrapper:hover .marquee-track-2 {
     animation-play-state: paused;
   }
 }

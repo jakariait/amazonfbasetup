@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
 import ImageComponent from "@/components/ImageComponent";
 
-const BrandsWeWorkWith = () => {
+const ResultsWeGet = () => {
   const [brands, setBrands] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,7 +13,7 @@ const BrandsWeWorkWith = () => {
   useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const res = await fetch(`${apiURL}/getallcarousel`);
+        const res = await fetch(`${apiURL}/getallresults`);
         const data = await res.json();
         setBrands(data);
       } catch (error) {
@@ -30,15 +30,15 @@ const BrandsWeWorkWith = () => {
     <section className=" bg-gray-50 border-b border-gray-200 py-12">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-8">
-          Brands We Work With
+          Results We Get
         </h2>
 
         <div className="marquee-wrapper">
-          <div className="marquee-track gap-10">
+          <div className="marquee-track-2">
             {[...brands, ...brands].map((brand, i) => (
               <div
                 key={brand._id + i}
-                className="flex-shrink-0 w-32  flex justify-center items-center"
+                className="flex-shrink-0 w-[500px]  flex justify-center items-center"
               >
                 <ImageComponent
                   imageName={brand.imgSrc}
@@ -54,4 +54,4 @@ const BrandsWeWorkWith = () => {
   );
 };
 
-export default BrandsWeWorkWith;
+export default ResultsWeGet;

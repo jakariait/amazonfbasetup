@@ -4,6 +4,8 @@ import CaseStudiesSample from "@/components/CaseStudiesSample";
 import { caseStudyPreviews, allResults } from "@/utils/caseStudies";
 import { getCalendlyLink } from "@/utils/brand";
 import Link from "next/link";
+import BrandsWeWorkWith from "@/components/BrandsWeWorkWith";
+import ResultsWeGet from "@/components/ResultsWeGet";
 
 export default function CaseStudies() {
   return (
@@ -52,7 +54,8 @@ export default function CaseStudies() {
           </div>
         </div>
       </section>
-
+      <BrandsWeWorkWith />
+      <ResultsWeGet />
       <CaseStudiesSample />
 
       {/* All Case Studies Preview */}

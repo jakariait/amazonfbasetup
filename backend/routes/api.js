@@ -7,6 +7,8 @@ const AdminController = require("../controllers/AdminController");
 
 const FaqController = require("../controllers/FaqController");
 const BrandController = require("../controllers/BrandController");
+const ResultController = require("../controllers/ResultController");
+
 
 // Admin
 const { adminProtect } = require("../middlewares/authAdminMiddleware");
@@ -95,7 +97,7 @@ router.post(
   FaqController.createFAQ,
 );
 
-//  Routes for Carousel
+//  Routes for Brands
 router.post(
   "/createcarousel",
   upload,
@@ -111,7 +113,20 @@ router.delete(
 );
 
 
+//  Routes for Results
+router.post(
+  "/createresults",
+  upload,
+  adminProtect,
+  ResultController.createCarousel,
+);
+router.get("/getallresults", ResultController.getAllCarousel);
 
+router.delete(
+  "/deletebyidresults/:id",
+  adminProtect,
+  ResultController.deleteByIdCarousel,
+);
 
 
 

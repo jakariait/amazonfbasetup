@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="border-b border-orange-500 px-4 pt-10 pb-10 bg-gray-50">
+    <section className="border-b border-t border-gray-200 px-4 pt-10 pb-10 bg-gray-50">
       <div className="xl:container xl:mx-auto gap-6 grid md:grid-cols-2 items-center">
         {/* Right: Content */}
         <div className="w-full text-center md:text-left ">
