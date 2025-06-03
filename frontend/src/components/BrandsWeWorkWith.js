@@ -13,7 +13,7 @@ const BrandsWeWorkWith = () => {
   useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const res = await fetch(`${apiURL}/api/getallcarousel`);
+        const res = await fetch(`${apiURL}/getallcarousel`);
         const data = await res.json();
         setBrands(data);
       } catch (error) {
