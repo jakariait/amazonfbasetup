@@ -173,7 +173,7 @@ export default function FullServiceMetaAgency() {
         },
         {
           name: "Policy Compliance",
-          description: "Ensuring all campaigns meet Meta's advertising policies",
+          description: "Ensuring all campaigns meet Meta&apos;s advertising policies",
         },
         {
           name: "24/7 Campaign Monitoring",
@@ -292,7 +292,7 @@ export default function FullServiceMetaAgency() {
             Advertising Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From campaign strategy to million-dollar results, we're the only Meta advertising agency you'll ever need. Our comprehensive services handle every aspect of your Facebook and Instagram marketing.
+            From campaign strategy to million-dollar results, we&apos;re the only Meta advertising agency you&apos;ll ever need. Our comprehensive services handle every aspect of your Facebook and Instagram marketing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -316,7 +316,7 @@ export default function FullServiceMetaAgency() {
               Trusted by Brands Across All Industries
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself. We've helped thousands of businesses succeed with Meta advertising.
+              Our track record speaks for itself. We&apos;ve helped thousands of businesses succeed with Meta advertising.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -404,7 +404,7 @@ export default function FullServiceMetaAgency() {
             </h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Whether you're a startup looking to build awareness or an enterprise scaling your advertising efforts, we have the expertise to drive results.
+              Whether you&apos;re a startup looking to build awareness or an enterprise scaling your advertising efforts, we have the expertise to drive results.
             </p>
           </div>
 
@@ -455,7 +455,7 @@ export default function FullServiceMetaAgency() {
             </h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              A systematic approach that's helped thousands of businesses achieve Meta advertising success
+              A systematic approach that&apos;s helped thousands of businesses achieve Meta advertising success
             </p>
           </div>
 
@@ -600,7 +600,7 @@ export default function FullServiceMetaAgency() {
             Ready to Transform Your Meta Advertising?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of successful businesses who trust us to handle their complete Meta advertising operations. Let's discuss how we can accelerate your growth.
+            Join thousands of successful businesses who trust us to handle their complete Meta advertising operations. Let&apos;s discuss how we can accelerate your growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact-us">

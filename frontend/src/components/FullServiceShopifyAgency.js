@@ -294,8 +294,8 @@ export default function FullServiceShopifyAgency() {
             Success Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From store design to million-dollar sales, we're the only
-            Shopify agency you'll ever need. Our comprehensive services
+            From store design to million-dollar sales, we&apos;re the only
+            Shopify agency you&apos;ll ever need. Our comprehensive services
             handle every aspect of your e-commerce business so you can focus on
             what you do best.
           </p>
@@ -315,7 +315,7 @@ export default function FullServiceShopifyAgency() {
               Trusted by E-commerce Brands Worldwide
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself. We've helped hundreds of
+              Our track record speaks for itself. We&apos;ve helped hundreds of
               businesses succeed with Shopify.
             </p>
           </div>
@@ -405,7 +405,7 @@ export default function FullServiceShopifyAgency() {
             </h2>
             <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Whether you're launching your first store or managing a
+              Whether you&apos;re launching your first store or managing a
               multi-million dollar e-commerce empire, we have the expertise to
               help you succeed.
             </p>
@@ -458,7 +458,7 @@ export default function FullServiceShopifyAgency() {
             </h2>
             <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              A systematic approach that's helped hundreds of businesses
+              A systematic approach that&apos;s helped hundreds of businesses
               achieve e-commerce success
             </p>
           </div>
@@ -599,7 +599,7 @@ export default function FullServiceShopifyAgency() {
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             Join hundreds of successful e-commerce brands who trust us to handle
-            their complete Shopify operations. Let's discuss how we can
+            their complete Shopify operations. Let&apos;s discuss how we can
             accelerate your online success.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
