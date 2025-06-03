@@ -10,7 +10,7 @@ export default function AdminLayoutWrapper({ children }) {
   return (
     <ProtectedRoute>
       <AdminLayout>
-        <div className={"p-10"}> {children}</div>
+        <div className={"pt-5 overflow-hidden"}> {children}</div>
       </AdminLayout>
     </ProtectedRoute>
   );

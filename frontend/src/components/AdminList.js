@@ -1,303 +1,3 @@
-// "use client"; // If using App Router
-//
-// import React, { useEffect, useState } from "react";
-// import {
-//   Table,
-//   TableBody,
-//   TableCell,
-//   TableContainer,
-//   TableHead,
-//   TableRow,
-//   Paper,
-//   CircularProgress,
-//   Button,
-//   Dialog,
-//   DialogActions,
-//   DialogContent,
-//   DialogContentText,
-//   DialogTitle,
-//   Snackbar,
-//   Alert,
-//   Box,
-// } from "@mui/material";
-// import axios from "axios";
-// import useAuthAdminStore from "@/store/AuthAdminStore";
-// import Link from "next/link"; // ✅ Next.js Link
-//
-// const AdminList = () => {
-//   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-//   const { token } = useAuthAdminStore();
-//
-//   const [admins, setAdmins] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//
-//   const [snackbarOpen, setSnackbarOpen] = useState(false);
-//   const [snackbarSeverity, setSnackbarSeverity] = useState("success");
-//   const [snackbarMessage, setSnackbarMessage] = useState("");
-//
-//   const [openDeleteDialog, setOpenDeleteDialog] = useState(false);
-//   const [selectedAdminId, setSelectedAdminId] = useState(null);
-//
-//   useEffect(() => {
-//     fetchAdmins();
-//   }, []);
-//
-//   const fetchAdmins = async () => {
-//     setLoading(true);
-//     try {
-//       const response = await axios.get(`${apiUrl}/admin/getall`, {
-//         headers: {
-//           Authorization: `Bearer ${token}`,
-//         },
-//       });
-//       setAdmins(response.data.admins);
-//     } catch (error) {
-//       showSnackbar("error", "Failed to fetch admins");
-//     } finally {
-//       setLoading(false);
-//     }
-//   };
-//
-//   const handleDeleteClick = (adminId) => {
-//     setSelectedAdminId(adminId);
-//     setOpenDeleteDialog(true);
-//   };
-//
-//   const handleDeleteConfirm = async () => {
-//     try {
-//       await axios.delete(`${apiUrl}/admin/${selectedAdminId}`, {
-//         headers: {
-//           Authorization: `Bearer ${token}`,
-//         },
-//       });
-//       showSnackbar("success", "Admin deleted successfully");
-//       fetchAdmins();
-//     } catch (error) {
-//       showSnackbar("error", "Failed to delete admin");
-//     } finally {
-//       setOpenDeleteDialog(false);
-//       setSelectedAdminId(null);
-//     }
-//   };
-//
-//   const handleSnackbarClose = (_, reason) => {
-//     if (reason === "clickaway") return;
-//     setSnackbarOpen(false);
-//   };
-//
-//   const showSnackbar = (severity, message) => {
-//     setSnackbarSeverity(severity);
-//     setSnackbarMessage(message);
-//     setSnackbarOpen(true);
-//   };
-//
-//   // Custom styles for Material-UI components
-//   const tableHeaderStyle = {
-//     backgroundColor: '#f97316', // orange-500
-//     '& .MuiTableCell-head': {
-//       color: '#000000',
-//       fontWeight: 'bold',
-//     }
-//   };
-//
-//   const tableRowStyle = {
-//     '&:nth-of-type(odd)': {
-//       backgroundColor: '#fff7ed', // orange-50
-//     },
-//     '&:hover': {
-//       backgroundColor: '#fed7aa', // orange-200
-//     },
-//     '& .MuiTableCell-root': {
-//       color: '#000000',
-//     }
-//   };
-//
-//   const editButtonStyle = {
-//     borderColor: '#f97316',
-//     color: '#f97316',
-//     '&:hover': {
-//       borderColor: '#ea580c',
-//       backgroundColor: '#fff7ed',
-//       color: '#ea580c',
-//     }
-//   };
-//
-//   const deleteButtonStyle = {
-//     borderColor: '#dc2626',
-//     color: '#dc2626',
-//     '&:hover': {
-//       borderColor: '#b91c1c',
-//       backgroundColor: '#fef2f2',
-//       color: '#b91c1c',
-//     }
-//   };
-//
-//   const dialogStyle = {
-//     '& .MuiDialog-paper': {
-//       border: '2px solid #f97316',
-//     },
-//     '& .MuiDialogTitle-root': {
-//       backgroundColor: '#f97316',
-//       color: '#000000',
-//       fontWeight: 'bold',
-//     },
-//     '& .MuiDialogContent-root': {
-//       color: '#000000',
-//     }
-//   };
-//
-//   if (loading) {
-//     return (
-//       <Box sx={{ textAlign: "center", mt: 5 }}>
-//         <CircularProgress sx={{ color: '#f97316' }} size={60} />
-//       </Box>
-//     );
-//   }
-//
-//   return (
-//     <Paper sx={{
-//       p: 3,
-//       boxShadow: '0 10px 25px rgba(249, 115, 22, 0.1)',
-//       border: '1px solid #fed7aa'
-//     }}>
-//       <h1
-//         className="mb-6 pl-2 text-lg font-semibold text-black"
-//         style={{
-//           borderLeft: '4px solid #f97316' // orange-500 border
-//         }}
-//       >
-//         View and Create Admins
-//       </h1>
-//
-//       <div className="flex justify-center mb-6">
-//         <Link
-//           href="/admin/dashboard/create-admin"
-//           className="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-md cursor-pointer font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
-//         >
-//           Create Admin
-//         </Link>
-//       </div>
-//
-//       <TableContainer sx={{
-//         border: '2px solid #f97316',
-//         borderRadius: '8px',
-//         overflow: 'hidden'
-//       }}>
-//         <Table>
-//           <TableHead sx={tableHeaderStyle}>
-//             <TableRow>
-//               <TableCell>SL</TableCell>
-//               <TableCell>Name</TableCell>
-//               <TableCell>Email</TableCell>
-//               <TableCell>Created At</TableCell>
-//               <TableCell>Action</TableCell>
-//             </TableRow>
-//           </TableHead>
-//           <TableBody>
-//             {admins.map((admin, index) => (
-//               <TableRow key={admin._id} sx={tableRowStyle}>
-//                 <TableCell sx={{ fontWeight: 'medium' }}>{index + 1}</TableCell>
-//                 <TableCell sx={{ fontWeight: 'medium' }}>{admin.name}</TableCell>
-//                 <TableCell>{admin.email}</TableCell>
-//                 <TableCell>
-//                   {new Date(admin.createdAt).toLocaleString()}
-//                 </TableCell>
-//                 <TableCell>
-//                   <div className="flex gap-2">
-//                     <Link href={`/admin/edit/${admin._id}`} passHref>
-//                       <Button
-//                         variant="outlined"
-//                         sx={editButtonStyle}
-//                         size="small"
-//                       >
-//                         Edit
-//                       </Button>
-//                     </Link>
-//                     <Button
-//                       variant="outlined"
-//                       sx={deleteButtonStyle}
-//                       onClick={() => handleDeleteClick(admin._id)}
-//                       size="small"
-//                     >
-//                       Delete
-//                     </Button>
-//                   </div>
-//                 </TableCell>
-//               </TableRow>
-//             ))}
-//           </TableBody>
-//         </Table>
-//       </TableContainer>
-//
-//       {/* Delete Dialog */}
-//       <Dialog
-//         open={openDeleteDialog}
-//         onClose={() => setOpenDeleteDialog(false)}
-//         sx={dialogStyle}
-//       >
-//         <DialogTitle>Confirm Delete</DialogTitle>
-//         <DialogContent>
-//           <DialogContentText sx={{ color: '#000000' }}>
-//             Are you sure you want to delete this admin? This action cannot be undone.
-//           </DialogContentText>
-//         </DialogContent>
-//         <DialogActions sx={{ padding: '16px 24px' }}>
-//           <Button
-//             onClick={() => setOpenDeleteDialog(false)}
-//             sx={{
-//               color: '#6b7280',
-//               '&:hover': {
-//                 backgroundColor: '#f3f4f6',
-//               }
-//             }}
-//           >
-//             Cancel
-//           </Button>
-//           <Button
-//             onClick={handleDeleteConfirm}
-//             sx={{
-//               backgroundColor: '#dc2626',
-//               color: '#ffffff',
-//               '&:hover': {
-//                 backgroundColor: '#b91c1c',
-//               }
-//             }}
-//             variant="contained"
-//           >
-//             Delete
-//           </Button>
-//         </DialogActions>
-//       </Dialog>
-//
-//       {/* Snackbar */}
-//       <Snackbar
-//         open={snackbarOpen}
-//         autoHideDuration={4000}
-//         onClose={handleSnackbarClose}
-//         anchorOrigin={{ vertical: "top", horizontal: "right" }}
-//       >
-//         <Alert
-//           onClose={handleSnackbarClose}
-//           severity={snackbarSeverity}
-//           sx={{
-//             width: "100%",
-//             backgroundColor: snackbarSeverity === 'success' ? '#f97316' : undefined,
-//             color: snackbarSeverity === 'success' ? '#000000' : undefined,
-//             '& .MuiAlert-icon': {
-//               color: snackbarSeverity === 'success' ? '#000000' : undefined,
-//             }
-//           }}
-//           variant="filled"
-//         >
-//           {snackbarMessage}
-//         </Alert>
-//       </Snackbar>
-//     </Paper>
-//   );
-// };
-//
-// export default AdminList;
-
 "use client"; // If using App Router
 
 import React, { useEffect, useState } from "react";
@@ -323,7 +23,7 @@ import {
   Grid,
 } from "@mui/material";
 import axios from "axios";
-import useAuthAdminStore from "@/store/AuthAdminStore";
+import useAuthAdminStore from "@/store/AuthAdminStore"; // Assuming this path is correct for your project
 import Link from "next/link"; // ✅ Next.js Link
 
 const AdminList = () => {
@@ -365,6 +65,7 @@ const AdminList = () => {
       });
       setAdmins(response.data.admins);
     } catch (error) {
+      console.error("Failed to fetch admins:", error); // It's good practice to log the actual error
       showSnackbar("error", "Failed to fetch admins");
     } finally {
       setLoading(false);
@@ -377,6 +78,7 @@ const AdminList = () => {
   };
 
   const handleDeleteConfirm = async () => {
+    if (!selectedAdminId) return;
     try {
       await axios.delete(`${apiUrl}/admin/${selectedAdminId}`, {
         headers: {
@@ -384,8 +86,9 @@ const AdminList = () => {
         },
       });
       showSnackbar("success", "Admin deleted successfully");
-      fetchAdmins();
+      fetchAdmins(); // Refresh the list
     } catch (error) {
+      console.error("Failed to delete admin:", error);
       showSnackbar("error", "Failed to delete admin");
     } finally {
       setOpenDeleteDialog(false);
@@ -399,7 +102,7 @@ const AdminList = () => {
     setEditFormData({
       name: admin.name,
       email: admin.email,
-      password: "", // Keep password empty for security
+      password: "", // Keep password empty for security; only set if user types a new one
     });
     setEditFormErrors({});
     setOpenEditDialog(true);
@@ -422,6 +125,7 @@ const AdminList = () => {
 
   const validateEditForm = () => {
     const errors = {};
+    const emailRegex = /\S+@\S+\.\S+/;
 
     if (!editFormData.name.trim()) {
       errors.name = "Name is required";
@@ -429,17 +133,19 @@ const AdminList = () => {
 
     if (!editFormData.email.trim()) {
       errors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(editFormData.email)) {
+    } else if (!emailRegex.test(editFormData.email)) {
       errors.email = "Email is invalid";
     }
 
-    // Check if email is already taken by another admin
-    const emailExists = admins.some(
-      (admin) =>
-        admin.email === editFormData.email && admin._id !== editingAdmin._id,
-    );
-    if (emailExists) {
-      errors.email = "Email is already taken";
+    // Check if email is already taken by another admin (excluding the current admin being edited)
+    if (editingAdmin && editingAdmin._id) {
+      const emailExists = admins.some(
+        (admin) =>
+          admin.email === editFormData.email && admin._id !== editingAdmin._id,
+      );
+      if (emailExists) {
+        errors.email = "Email is already taken by another admin";
+      }
     }
 
     setEditFormErrors(errors);
@@ -458,7 +164,7 @@ const AdminList = () => {
         email: editFormData.email,
       };
 
-      // Only include password if it's provided
+      // Only include password in the update if it's provided (and not just whitespace)
       if (editFormData.password.trim()) {
         updateData.password = editFormData.password;
       }
@@ -471,10 +177,12 @@ const AdminList = () => {
 
       showSnackbar("success", "Admin updated successfully");
       setOpenEditDialog(false);
-      fetchAdmins();
+      fetchAdmins(); // Refresh the list
     } catch (error) {
+      console.error("Failed to update admin:", error);
       const errorMessage =
-        error.response?.data?.message || "Failed to update admin";
+        error.response?.data?.message ||
+        "Failed to update admin. Please try again.";
       showSnackbar("error", errorMessage);
     } finally {
       setEditLoading(false);
@@ -499,84 +207,14 @@ const AdminList = () => {
     setSnackbarOpen(true);
   };
 
-  // Custom styles for Material-UI components
-  const tableHeaderStyle = {
-    backgroundColor: "#f97316", // orange-500
-    "& .MuiTableCell-head": {
-      color: "#000000",
-      fontWeight: "bold",
-    },
-  };
-
-  const tableRowStyle = {
-    "&:nth-of-type(odd)": {
-      backgroundColor: "#fff7ed", // orange-50
-    },
-    "&:hover": {
-      backgroundColor: "#fed7aa", // orange-200
-    },
-    "& .MuiTableCell-root": {
-      color: "#000000",
-    },
-  };
-
-  const editButtonStyle = {
-    borderColor: "#f97316",
-    color: "#f97316",
-    "&:hover": {
-      borderColor: "#ea580c",
-      backgroundColor: "#fff7ed",
-      color: "#ea580c",
-    },
-  };
-
-  const deleteButtonStyle = {
-    borderColor: "#dc2626",
-    color: "#dc2626",
-    "&:hover": {
-      borderColor: "#b91c1c",
-      backgroundColor: "#fef2f2",
-      color: "#b91c1c",
-    },
-  };
-
-  const dialogStyle = {
-    "& .MuiDialog-paper": {
-      border: "2px solid #f97316",
-    },
-    "& .MuiDialogTitle-root": {
-      backgroundColor: "#f97316",
-      color: "#000000",
-      fontWeight: "bold",
-    },
-    "& .MuiDialogContent-root": {
-      color: "#000000",
-    },
-  };
-
-  const textFieldStyle = {
-    "& .MuiOutlinedInput-root": {
-      "& fieldset": {
-        borderColor: "#d1d5db",
-      },
-      "&:hover fieldset": {
-        borderColor: "#f97316",
-      },
-      "&.Mui-focused fieldset": {
-        borderColor: "#f97316",
-      },
-    },
-    "& .MuiInputLabel-root": {
-      color: "#6b7280",
-      "&.Mui-focused": {
-        color: "#f97316",
-      },
-    },
-  };
-
   if (loading) {
     return (
-      <Box sx={{ textAlign: "center", mt: 5 }}>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="calc(100vh - 200px)" // Example height, adjust as needed
+      >
         <CircularProgress sx={{ color: "#f97316" }} size={60} />
       </Box>
     );
@@ -585,9 +223,10 @@ const AdminList = () => {
   return (
     <Paper
       sx={{
-        p: 3,
-        boxShadow: "0 10px 25px rgba(249, 115, 22, 0.1)",
-        border: "1px solid #fed7aa",
+        p: { xs: 1, sm: 2, md: 3 }, // Responsive padding
+        boxShadow: "0 10px 25px rgba(249, 115, 22, 0.1)", // orange-500 with alpha
+        border: "1px solid #fed7aa", // orange-200
+        m: { xs: 1, sm: 2 }, // Responsive margin
       }}
     >
       <h1
@@ -599,65 +238,84 @@ const AdminList = () => {
         View and Create Admins
       </h1>
 
-      <div className="flex justify-center mb-6">
-        <Link
+      <Box sx={{ display: "flex", justifyContent: "center", mb: 3 }}>
+        <Button
+          component={Link}
           href="/admin/dashboard/create-admin"
-          className="bg-orange-500 hover:bg-orange-600 text-black px-6 py-3 rounded-md cursor-pointer font-medium transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5"
+          variant="contained"
+          sx={{
+            backgroundColor: "#f97316", // orange-500
+            color: "#000000", // black
+            fontWeight: "medium",
+            px: 3,
+            py: 1.5,
+            borderRadius: "6px",
+            transition: "all 0.2s ease-in-out",
+            "&:hover": {
+              backgroundColor: "#ea580c", // orange-600
+              boxShadow: "0 4px 15px rgba(249, 115, 22, 0.2)", // Lighter shadow on hover
+              transform: "translateY(-2px)",
+            },
+          }}
         >
           Create Admin
-        </Link>
-      </div>
+        </Button>
+      </Box>
 
-      <TableContainer
-        sx={{
-          border: "2px solid #f97316",
-          borderRadius: "8px",
-          overflow: "hidden",
-        }}
-      >
+      <TableContainer>
         <Table>
-          <TableHead sx={tableHeaderStyle}>
+          <TableHead>
             <TableRow>
               <TableCell>SL</TableCell>
               <TableCell>Name</TableCell>
               <TableCell>Email</TableCell>
               <TableCell>Created At</TableCell>
-              <TableCell>Action</TableCell>
+              <TableCell align="center">Action</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {admins.map((admin, index) => (
-              <TableRow key={admin._id} sx={tableRowStyle}>
-                <TableCell sx={{ fontWeight: "medium" }}>{index + 1}</TableCell>
-                <TableCell sx={{ fontWeight: "medium" }}>
-                  {admin.name}
-                </TableCell>
-                <TableCell>{admin.email}</TableCell>
-                <TableCell>
-                  {new Date(admin.createdAt).toLocaleString()}
-                </TableCell>
-                <TableCell>
-                  <div className="flex gap-2">
-                    <Button
-                      variant="outlined"
-                      sx={editButtonStyle}
-                      onClick={() => handleEditClick(admin)}
-                      size="small"
-                    >
-                      Edit
-                    </Button>
-                    <Button
-                      variant="outlined"
-                      sx={deleteButtonStyle}
-                      onClick={() => handleDeleteClick(admin._id)}
-                      size="small"
-                    >
-                      Delete
-                    </Button>
-                  </div>
+            {admins.length === 0 && !loading ? (
+              <TableRow>
+                <TableCell colSpan={5} align="center" sx={{ py: 5 }}>
+                  No admins found.
                 </TableCell>
               </TableRow>
-            ))}
+            ) : (
+              admins.map((admin, index) => (
+                <TableRow key={admin._id}>
+                  <TableCell sx={{ fontWeight: "medium" }}>
+                    {index + 1}
+                  </TableCell>
+                  <TableCell sx={{ fontWeight: "medium" }}>
+                    {admin.name}
+                  </TableCell>
+                  <TableCell>{admin.email}</TableCell>
+                  <TableCell>
+                    {new Date(admin.createdAt).toLocaleString()}
+                  </TableCell>
+                  <TableCell align="center">
+                    {" "}
+                    {/* Centered actions */}
+                    <Box display="flex" gap={1} justifyContent="center">
+                      <Button
+                        variant="outlined"
+                        onClick={() => handleEditClick(admin)}
+                        size="small"
+                      >
+                        Edit
+                      </Button>
+                      <Button
+                        variant="outlined"
+                        onClick={() => handleDeleteClick(admin._id)}
+                        size="small"
+                      >
+                        Delete
+                      </Button>
+                    </Box>
+                  </TableCell>
+                </TableRow>
+              ))
+            )}
           </TableBody>
         </Table>
       </TableContainer>
@@ -668,11 +326,14 @@ const AdminList = () => {
         onClose={handleEditDialogClose}
         maxWidth="sm"
         fullWidth
-        sx={dialogStyle}
       >
         <DialogTitle>Edit Admin</DialogTitle>
         <DialogContent sx={{ pt: 2 }}>
-          <Grid container spacing={3} sx={{ pt: 5 }}>
+          {" "}
+          {/* Added padding top */}
+          <Grid container spacing={3} sx={{ pt: 3 }}>
+            {" "}
+            {/* Consistent padding top */}
             <Grid item xs={12}>
               <TextField
                 label="Name"
@@ -681,8 +342,8 @@ const AdminList = () => {
                 onChange={handleEditFormChange("name")}
                 error={!!editFormErrors.name}
                 helperText={editFormErrors.name}
-                sx={textFieldStyle}
                 disabled={editLoading}
+                autoFocus // Autofocus on the first field
               />
             </Grid>
             <Grid item xs={12}>
@@ -694,7 +355,6 @@ const AdminList = () => {
                 onChange={handleEditFormChange("email")}
                 error={!!editFormErrors.email}
                 helperText={editFormErrors.email}
-                sx={textFieldStyle}
                 disabled={editLoading}
               />
             </Grid>
@@ -710,7 +370,6 @@ const AdminList = () => {
                   editFormErrors.password ||
                   "Leave empty to keep current password"
                 }
-                sx={textFieldStyle}
                 disabled={editLoading}
               />
             </Grid>
@@ -721,9 +380,9 @@ const AdminList = () => {
             onClick={handleEditDialogClose}
             disabled={editLoading}
             sx={{
-              color: "#6b7280",
+              color: "#6b7280", // coolGray-500
               "&:hover": {
-                backgroundColor: "#f3f4f6",
+                backgroundColor: "#f3f4f6", // coolGray-100
               },
             }}
           >
@@ -733,14 +392,14 @@ const AdminList = () => {
             onClick={handleEditSubmit}
             disabled={editLoading}
             sx={{
-              backgroundColor: "#f97316",
-              color: "#000000",
+              backgroundColor: "#f97316", // orange-500
+              color: "#000000", // black for better contrast on orange
               "&:hover": {
-                backgroundColor: "#ea580c",
+                backgroundColor: "#ea580c", // orange-600
               },
               "&:disabled": {
-                backgroundColor: "#d1d5db",
-                color: "#9ca3af",
+                backgroundColor: "#d1d5db", // coolGray-300
+                color: "#9ca3af", // coolGray-400
               },
             }}
             variant="contained"
@@ -761,11 +420,17 @@ const AdminList = () => {
       <Dialog
         open={openDeleteDialog}
         onClose={() => setOpenDeleteDialog(false)}
-        sx={dialogStyle}
+        aria-labelledby="delete-dialog-title"
+        aria-describedby="delete-dialog-description"
       >
-        <DialogTitle>Confirm Delete</DialogTitle>
+        <DialogTitle id="delete-dialog-title">Confirm Delete</DialogTitle>
         <DialogContent>
-          <DialogContentText sx={{ color: "#000000" }}>
+          <DialogContentText
+            id="delete-dialog-description"
+            sx={{ color: "#000000" }}
+          >
+            {" "}
+            {/* ensure text color */}
             Are you sure you want to delete this admin? This action cannot be
             undone.
           </DialogContentText>
@@ -774,9 +439,9 @@ const AdminList = () => {
           <Button
             onClick={() => setOpenDeleteDialog(false)}
             sx={{
-              color: "#6b7280",
+              color: "#6b7280", // coolGray-500
               "&:hover": {
-                backgroundColor: "#f3f4f6",
+                backgroundColor: "#f3f4f6", // coolGray-100
               },
             }}
           >
@@ -785,13 +450,14 @@ const AdminList = () => {
           <Button
             onClick={handleDeleteConfirm}
             sx={{
-              backgroundColor: "#dc2626",
-              color: "#ffffff",
+              backgroundColor: "#dc2626", // red-600
+              color: "#ffffff", // white
               "&:hover": {
-                backgroundColor: "#b91c1c",
+                backgroundColor: "#b91c1c", // red-700
               },
             }}
             variant="contained"
+            autoFocus // Autofocus on the delete button in delete dialog
           >
             Delete
           </Button>
@@ -810,11 +476,17 @@ const AdminList = () => {
           severity={snackbarSeverity}
           sx={{
             width: "100%",
+            color: snackbarSeverity === "success" ? "#000000" : "#ffffff", // Black text for success (orange bg), white for others
             backgroundColor:
-              snackbarSeverity === "success" ? "#f97316" : undefined,
-            color: snackbarSeverity === "success" ? "#000000" : undefined,
+              snackbarSeverity === "success"
+                ? "#f97316" // orange-500 for success
+                : snackbarSeverity === "error"
+                  ? "#dc2626" // red-600 for error
+                  : snackbarSeverity === "warning"
+                    ? "#f59e0b" // amber-500 for warning
+                    : "#10b981", // emerald-500 for info (default)
             "& .MuiAlert-icon": {
-              color: snackbarSeverity === "success" ? "#000000" : undefined,
+              color: snackbarSeverity === "success" ? "#000000" : "#ffffff", // Match icon color to text
             },
           }}
           variant="filled"
