@@ -1,9 +1,13 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from 'lucide-react';
+import { Mail, Phone, CheckCircle } from 'lucide-react';
 import ContactForm from "@/components/ContactForm";
+import {getCalendlyLink, getWhatsApp} from "@/utils/brand";
+import Link from "next/link";
 
 const ContactSection = () => {
 
+  const phone = getWhatsApp();
+  const link = `https://wa.me/88${phone}`;
 
   return (
     <section className="bg-white py-16 px-6">
@@ -31,7 +35,7 @@ const ContactSection = () => {
 
               <div className="space-y-6">
                 {/* Email */}
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center space-x-4">
                   <div className="bg-white bg-opacity-20 p-3 rounded-lg">
                     <Mail className="w-6 h-6 text-orange-500" />
                   </div>
@@ -43,7 +47,7 @@ const ContactSection = () => {
                 </div>
 
                 {/* Phone */}
-                <div className="flex items-start space-x-4">
+                <div className="flex items-center  space-x-4">
                   <div className="bg-white bg-opacity-20 p-3 rounded-lg">
                     <Phone className="w-6 h-6 text-orange-500" />
                   </div>
@@ -54,30 +58,8 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                {/* Address */}
-                <div className="flex items-start space-x-4">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-lg">
-                    <MapPin className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Visit Us</h4>
-                    <p className="text-orange-100">123 Business Avenue</p>
-                    <p className="text-orange-100">New York, NY 10001</p>
-                  </div>
-                </div>
 
-                {/* Business Hours */}
-                <div className="flex items-start space-x-4">
-                  <div className="bg-white bg-opacity-20 p-3 rounded-lg">
-                    <Clock className="w-6 h-6 text-orange-500" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Business Hours</h4>
-                    <p className="text-orange-100">Mon - Fri: 9:00 AM - 6:00 PM</p>
-                    <p className="text-orange-100">Sat: 10:00 AM - 4:00 PM</p>
-                    <p className="text-orange-100">Sun: Closed</p>
-                  </div>
-                </div>
+
               </div>
             </div>
 
@@ -109,9 +91,11 @@ const ContactSection = () => {
               </div>
 
               <div className="mt-8 p-4 bg-orange-500 bg-opacity-10 rounded-lg border border-orange-500">
-                <p className="text-black font-semibold text-center">
-                  🚀 Ready to 10x your revenue? Let&apos;s talk!
-                </p>
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                  <p className="text-black font-semibold text-center cursor-pointer ">
+                    🚀 Ready to 10x your revenue? Let&apos;s talk!
+                  </p>
+                </a>
               </div>
             </div>
           </div>
@@ -126,9 +110,18 @@ const ContactSection = () => {
             <p className="text-orange-100 mb-6">
               Book a free 30-minute strategy call and discover how we can help you achieve breakthrough growth.
             </p>
-            <button className="bg-white text-orange-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
-              Schedule Free Consultation
-            </button>
+            <a
+              href={getCalendlyLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="bg-white text-orange-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors cursor-pointer">
+                Schedule Free Consultation
+              </button>
+
+
+
+            </a>
           </div>
         </div>
       </div>

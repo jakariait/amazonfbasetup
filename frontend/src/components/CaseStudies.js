@@ -2,6 +2,8 @@ import React from "react";
 import { ArrowRight, BarChart3, ExternalLink } from "lucide-react";
 import CaseStudiesSample from "@/components/CaseStudiesSample";
 import { caseStudyPreviews, allResults } from "@/utils/caseStudies";
+import { getCalendlyLink } from "@/utils/brand";
+import Link from "next/link";
 
 export default function CaseStudies() {
   return (
@@ -87,9 +89,6 @@ export default function CaseStudies() {
                 <div className="text-2xl font-bold text-orange-500 mb-4">
                   {preview.growth}
                 </div>
-                <button className="flex items-center text-orange-500 hover:text-orange-600 text-sm font-medium group-hover:translate-x-1 transition-transform">
-                  View Full Case Study <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
               </div>
             ))}
           </div>
@@ -108,13 +107,20 @@ export default function CaseStudies() {
             can achieve similar growth for your business.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg">
-              Get Your Free Strategy Session
-            </button>
-            <button className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center">
-              Download Full Case Studies{" "}
-              <ExternalLink className="w-4 h-4 ml-2" />
-            </button>
+            <a
+              href={getCalendlyLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                Get Your Free Strategy Session
+              </button>
+            </a>
+            <Link href="/contact-us">
+              <button className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer">
+                Contact Support
+              </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -38,7 +38,7 @@ const Footer = () => {
             <img
               src={getBrandLogo()}
               alt={getBrandName()}
-              className="w-30 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+              className="w-20 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
             />
             <p className="text-black text-sm mt-1">E-commerce Growth Experts</p>
           </div>

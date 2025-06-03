@@ -1,14 +1,16 @@
 "use client";
 
 import { FaWhatsapp } from "react-icons/fa";
+import { getWhatsApp } from "@/utils/brand";
 
 const WhatsAppButton = () => {
-  const phoneNumber = "+8801307217573"; // Replace with your number
+  const phone = getWhatsApp();
+  const link = `https://wa.me/88${phone}`;
   const message = "Hello! I'm interested in your services."; // Optional
 
   const handleClick = () => {
     const encodedMsg = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMsg}`, "_blank");
+    window.open(`${link}?text=${encodedMsg}`, "_blank");
   };
 
   return (

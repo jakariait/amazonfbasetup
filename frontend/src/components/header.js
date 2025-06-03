@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import {getBrandLogo, getBrandName} from "@/utils/brand";
+import { getBrandLogo, getBrandName } from "@/utils/brand";
 
 const menuItems = [
   {
@@ -13,7 +13,7 @@ const menuItems = [
     name: "Services",
     path: "services",
     subItems: [
-      { name: "Amazon FBA", path: "/amazon" },
+      { name: "Amazon", path: "/amazon" },
       { name: "Shopify", path: "/shopify" },
       { name: "Meta", path: "/meta" },
     ],
@@ -109,17 +109,14 @@ export default function Header() {
           <img
             src={getBrandLogo()}
             alt={getBrandName()}
-            className="w-40 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+            className="w-20 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
           />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center">
           {menuItems.map((item, idx) => (
-            <div
-              key={idx}
-              className="relative"
-            >
+            <div key={idx} className="relative">
               {item.subItems ? (
                 <div
                   onMouseEnter={() => handleMenuEnter(idx)}
@@ -156,8 +153,8 @@ export default function Header() {
                         : "opacity-0 invisible -translate-y-2"
                     }`}
                     style={{
-                      minWidth: '192px',
-                      marginTop: '0px' // Remove gap between menu and submenu
+                      minWidth: "192px",
+                      marginTop: "0px", // Remove gap between menu and submenu
                     }}
                     onMouseEnter={handleSubmenuEnter}
                     onMouseLeave={handleSubmenuLeave}
