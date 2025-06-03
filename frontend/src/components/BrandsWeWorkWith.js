@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import ImageComponent from "@/components/ImageComponent";
 
@@ -9,10 +8,12 @@ const BrandsWeWorkWith = () => {
   const [brands, setBrands] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const apiURL = process.env.NEXT_PUBLIC_API_URL;
+
   useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const res = await fetch("http://localhost:5050/api/getallcarousel");
+        const res = await fetch(`${apiURL}/api/getallcarousel`);
         const data = await res.json();
         setBrands(data);
       } catch (error) {
@@ -50,9 +51,6 @@ const BrandsWeWorkWith = () => {
         </div>
       </div>
     </section>
-
-
-
   );
 };
 
