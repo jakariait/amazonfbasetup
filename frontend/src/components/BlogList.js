@@ -120,7 +120,7 @@ const BlogList = () => {
         <Button variant={"outlined"}>Create A Blog</Button>
       </Link>
 
-      <h1 className="border-l-4 primaryBorderColor primaryTextColor mb-6 pl-2 text-lg font-semibold">
+      <h1 className="border-l-4  mb-6 pl-2 text-lg font-semibold">
         Blog List
       </h1>
       {loading ? (

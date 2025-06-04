@@ -243,7 +243,7 @@ const EditBlog = () => {
 					/>
 					{imagePreview && (
 						<Box mt={1}>
-							<ImageComponent imageName={imagePreview} className={"w-96"} />
+							<ImageComponent imageName={imagePreview}  />
 						</Box>
 					)}
 				</Box>
@@ -256,55 +256,65 @@ const EditBlog = () => {
 					onTextChange={(e) =>
 						setFormData((prev) => ({ ...prev, longDesc: e.htmlValue }))
 					}
-					style={{ height: "260px" }}
+					style={{ height: "660px" }}
 				/>
 			</Box>
 
-			<Box mb={2}>
-				<Typography variant="subtitle1">Tags</Typography>
-				<Box display="flex" flexWrap="wrap" gap={1} mb={1}>
-					{formData.searchTags.map((tag, i) => (
-						<Chip
-							key={i}
-							label={tag}
-							onDelete={() => handleDeleteTag(tag)}
-							size="small"
-						/>
-					))}
+			<div className={"grid grid-cols-3 gap-4 "}>
+				<Box >
+					<Typography variant="subtitle1">Tags</Typography>
+
+					<CustomTextField
+						placeholder="Type a tag and press Enter"
+						value={tagInput}
+						onChange={(e) => setTagInput(e.target.value)}
+						onKeyDown={handleAddTag}
+					/>
+					<Box display="flex" flexWrap="wrap" gap={1} mb={1}>
+						{formData.searchTags.map((tag, i) => (
+							<Chip
+								key={i}
+								label={tag}
+								onDelete={() => handleDeleteTag(tag)}
+								size="small"
+							/>
+						))}
+					</Box>
 				</Box>
-				<CustomTextField
-					placeholder="Type a tag and press Enter"
-					value={tagInput}
-					onChange={(e) => setTagInput(e.target.value)}
-					onKeyDown={handleAddTag}
-				/>
-			</Box>
+				<Box >
+					<Typography variant="subtitle1">Meta Keywords</Typography>
 
-			<Box mb={2}>
-				<Typography variant="subtitle1">Meta Keywords</Typography>
-				<Box display="flex" flexWrap="wrap" gap={1} mb={1}>
-					{formData.metaKeywords.map((kw, i) => (
-						<Chip
-							key={i}
-							label={kw}
-							onDelete={() => handleDeleteKeyword(kw)}
-							size="small"
-						/>
-					))}
+					<CustomTextField
+						placeholder="Type a keyword and press Enter"
+						value={keywordInput}
+						onChange={(e) => setKeywordInput(e.target.value)}
+						onKeyDown={handleAddKeyword}
+					/>
+					<Box display="flex" flexWrap="wrap" gap={1} mb={1}>
+						{formData.metaKeywords.map((kw, i) => (
+							<Chip
+								key={i}
+								label={kw}
+								onDelete={() => handleDeleteKeyword(kw)}
+								size="small"
+							/>
+						))}
+					</Box>
 				</Box>
-				<CustomTextField
-					placeholder="Type a keyword and press Enter"
-					value={keywordInput}
-					onChange={(e) => setKeywordInput(e.target.value)}
-					onKeyDown={handleAddKeyword}
-				/>
-			</Box>
+				<Box>
+					<Typography variant="subtitle1">Meta Title</Typography>
+					<CustomTextField
+						placeholder="Meta Title"
+						value={formData.metaTitle}
+						onChange={handleInputChange("metaTitle")}
+					/>
+				</Box>
 
-			<CustomTextField
-				label="Meta Title"
-				value={formData.metaTitle}
-				onChange={handleInputChange("metaTitle")}
-			/>
+			</div>
+
+
+
+
 			<CustomTextField
 				label="Meta Description"
 				value={formData.metaDescription}
