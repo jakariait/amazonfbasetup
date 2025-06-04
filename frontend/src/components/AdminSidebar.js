@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import useAuthAdminStore from "@/store/AuthAdminStore";
 import { getBrandName } from "@/utils/brand";
+import Link from "next/link";
+
 
 const AdminHeader = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -47,7 +49,10 @@ const AdminHeader = () => {
       <header className="bg-white text-gray-800 border-b border-gray-200 flex items-center justify-between px-4 py-3 shadow-sm">
         {/* Left - Brand */}
         <div className="flex items-center space-x-3">
+          <Link href="/">
           <h1 className="text-lg font-bold text-gray-900">{getBrandName()}</h1>
+          </Link>
+
         </div>
 
         <div className="md:flex items-center space-x-2 hidden text-gray-600">

@@ -50,7 +50,7 @@ const BlogList = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        `${apiURL}/activeblog?page=${page}`,
+        `${apiURL}/blog?page=${page}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
