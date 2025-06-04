@@ -11,7 +11,7 @@ const menuItems = [
   },
   {
     name: "About Us",
-    path: "about-us",
+    path: "/about-us",
   },
   {
     name: "Services",
@@ -22,9 +22,9 @@ const menuItems = [
       { name: "Meta", path: "/meta" },
     ],
   },
-  { name: "Success Story", path: "success-story" },
-  { name: "FAQs", path: "faqs" },
-  { name: "Contact Us", path: "contact-us" },
+  { name: "Success Story", path: "/success-story" },
+  { name: "FAQs", path: "/faqs" },
+  { name: "Contact Us", path: "/contact-us" },
   {name: "Blogs", path: "/blogs" },
 ];
 

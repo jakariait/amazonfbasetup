@@ -44,12 +44,13 @@ const BlogList = () => {
   });
 
   const token = useAuthAdminStore()
+  const apiURL = process.env.NEXT_PUBLIC_API_URL;
 
   const fetchBlogs = async (page = 1) => {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:5050/api/activeblog?page=${page}`,
+        `${apiURL}/activeblog?page=${page}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
