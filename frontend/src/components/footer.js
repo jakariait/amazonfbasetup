@@ -8,24 +8,19 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: Facebook,
-      href: "https://facebook.com/yourcompany",
+      href: "https://www.facebook.com/tess.agency",
       label: "Facebook",
     },
     {
       icon: Instagram,
-      href: "https://instagram.com/yourcompany",
+      href: "https://www.instagram.com/tess_amazon",
       label: "Instagram",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/company/yourcompany",
+      href: "https://www.linkedin.com/in/tess-agency/",
       label: "LinkedIn",
-    },
-    {
-      icon: Twitter,
-      href: "https://twitter.com/yourcompany",
-      label: "Twitter",
-    },
+    }
   ];
 
   return (

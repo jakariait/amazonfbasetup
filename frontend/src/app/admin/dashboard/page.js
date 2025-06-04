@@ -2,16 +2,14 @@
 import React from "react";
 import AdminList from "@/components/AdminList";
 import ContactTable from "@/components/ContactTable";
-import CarouselUpload from "@/components/BrandUpload";
-import ResultsUpload from "@/components/ResultsUpload";
+
+
 
 const Page = () => {
   return (
-    <div className={"grid grid-cols-1 gap-4"}>
+    <div className={"grid grid-cols-1 gap-4 xl:container xl:mx-auto"}>
       <AdminList />
       <ContactTable/>
-      <CarouselUpload/>
-      <ResultsUpload/>
     </div>
   );
 };

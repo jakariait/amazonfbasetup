@@ -5,7 +5,7 @@ import { getWhatsApp } from "@/utils/brand";
 
 const WhatsAppButton = () => {
   const phone = getWhatsApp();
-  const link = `https://wa.me/88${phone}`;
+  const link = `https://wa.me/${phone}`;
   const message = "Hello! I'm interested in your services."; // Optional
 
   const handleClick = () => {

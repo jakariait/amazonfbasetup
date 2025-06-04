@@ -8,7 +8,7 @@ const AdminController = require("../controllers/AdminController");
 const FaqController = require("../controllers/FaqController");
 const BrandController = require("../controllers/BrandController");
 const ResultController = require("../controllers/ResultController");
-
+const blogController = require("../controllers/BlogController");
 
 // Admin
 const { adminProtect } = require("../middlewares/authAdminMiddleware");
@@ -112,7 +112,6 @@ router.delete(
   BrandController.deleteByIdCarousel,
 );
 
-
 //  Routes for Results
 router.post(
   "/createresults",
@@ -128,6 +127,13 @@ router.delete(
   ResultController.deleteByIdCarousel,
 );
 
-
+// Routes for Blogs
+router.post("/blog", upload, adminProtect, blogController.createBlog);
+router.get("/blog", blogController.getAllBlogs);
+router.get("/activeblog", blogController.getActiveBlogs);
+router.get("/blog/slug/:slug", blogController.getBlogBySlug);
+router.get("/blog/:id", blogController.getBlogById);
+router.patch("/blog/:id", upload, adminProtect, blogController.updateBlog);
+router.delete("/blog/:id", adminProtect, blogController.deleteBlog);
 
 module.exports = router;

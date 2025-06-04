@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
-      <StatsAll/>
+      <StatsAll />
       <BrandsWeWorkWith />
-      <ResultsWeGet/>
+      <ResultsWeGet />
       <OurExpertise />
       <CaseStudiesSample />
       {/* CTA Section */}

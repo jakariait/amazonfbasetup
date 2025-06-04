@@ -2,12 +2,11 @@ import React from 'react';
 import { Mail, Phone, CheckCircle } from 'lucide-react';
 import ContactForm from "@/components/ContactForm";
 import {getCalendlyLink, getWhatsApp} from "@/utils/brand";
-import Link from "next/link";
 
 const ContactSection = () => {
 
   const phone = getWhatsApp();
-  const link = `https://wa.me/88${phone}`;
+  const link = `https://wa.me/${phone}`;
 
   return (
     <section className="bg-white py-16 px-6">
@@ -53,8 +52,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Call Us</h4>
-                    <p className="text-orange-100">+1 (555) 123-4567</p>
-                    <p className="text-orange-100">+1 (555) 987-6543</p>
+                    <p className="text-orange-100">+1 (217) 595-5859</p>
                   </div>
                 </div>
 

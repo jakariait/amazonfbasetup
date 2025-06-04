@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import useAuthAdminStore from "@/store/AuthAdminStore";
 import { getBrandName } from "@/utils/brand";
@@ -13,10 +13,10 @@ const AdminHeader = () => {
   const pathname = usePathname();
 
   const menuItems = [
-    {
-      name: "Dashboard",
-      path: "/admin/dashboard",
-    },
+    { name: "Dashboard", path: "/admin/dashboard" },
+    { name: "Blogs", path: "/admin/dashboard/blogs" },
+    { name: "Brands", path: "/admin/dashboard/brands" },
+    { name: "Results", path: "/admin/dashboard/results" },
   ];
 
   const handleLogout = async () => {
@@ -32,27 +32,28 @@ const AdminHeader = () => {
   };
 
   const handleMenuClick = (path) => {
-    router.push(path);
-    setIsDrawerOpen(false); // Close drawer on mobile
+    if (pathname !== path) {
+      router.push(path);
+    }
+    setIsDrawerOpen(false);
   };
 
   const adminName = admin?.name || "John Doe";
   const adminEmail = admin?.email || "admin@example.com";
 
   return (
-    <>
+    <div>
       {/* Header Bar */}
-      <header className="bg-black text-white border-b border-orange-500/20 flex items-center justify-between px-4 py-3">
+      <header className="bg-white text-gray-800 border-b border-gray-200 flex items-center justify-between px-4 py-3 shadow-sm">
         {/* Left - Brand */}
         <div className="flex items-center space-x-3">
-          <h1 className="text-lg font-bold">{getBrandName()}</h1>
+          <h1 className="text-lg font-bold text-gray-900">{getBrandName()}</h1>
         </div>
 
-        <div className="md:flex items-center space-x-2 hidden ">
+        <div className="md:flex items-center space-x-2 hidden text-gray-600">
           <span>{adminName}</span>
           <span>({adminEmail})</span>
         </div>
-
 
         {/* Desktop Menu */}
         <nav className="hidden lg:flex items-center space-x-6">
@@ -62,10 +63,10 @@ const AdminHeader = () => {
               <button
                 key={item.name}
                 onClick={() => handleMenuClick(item.path)}
-                className={`transition-all px-3 py-2 rounded-lg text-sm ${
+                className={`transition-all px-3 py-2 rounded-lg cursor-pointer text-sm ${
                   isActive
-                    ? "bg-orange-500/20 text-orange-400 border border-orange-500/30 shadow"
-                    : "text-gray-300 hover:bg-gray-800/50 hover:text-white"
+                    ? "bg-orange-500/10 text-orange-600 border border-orange-500/30 shadow"
+                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                 }`}
               >
                 {item.name}
@@ -75,7 +76,7 @@ const AdminHeader = () => {
           <button
             onClick={handleLogout}
             disabled={isLoggingOut}
-            className="px-4 py-2 text-sm bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 rounded-lg disabled:opacity-50"
+            className="px-4 py-2 cursor-pointer text-sm bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-600 rounded-lg disabled:opacity-50"
           >
             {isLoggingOut ? "Signing Out..." : "Sign Out"}
           </button>
@@ -84,7 +85,7 @@ const AdminHeader = () => {
         {/* Mobile Hamburger */}
         <button
           onClick={() => setIsDrawerOpen(!isDrawerOpen)}
-          className="lg:hidden p-2 rounded-lg hover:bg-gray-800/50 text-gray-400 hover:text-white"
+          className="lg:hidden p-2 rounded-lg hover:bg-gray-100 text-gray-600 hover:text-gray-900"
         >
           <svg
             className="w-6 h-6"
@@ -115,14 +116,16 @@ const AdminHeader = () => {
       {isDrawerOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
+            className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40"
             onClick={() => setIsDrawerOpen(false)}
           />
-          <div className="fixed top-0 left-0 z-50 w-64 h-full bg-black border-r border-orange-500/20 shadow-xl p-6 flex flex-col">
+          <div className="fixed top-0 left-0 z-50 w-64 h-full bg-white border-r border-gray-200 shadow-xl p-6 flex flex-col">
             {/* Profile */}
             <div className="mb-6">
-              <h3 className="font-semibold text-white truncate">{adminName}</h3>
-              <p className="text-sm text-gray-400 truncate">{adminEmail}</p>
+              <h3 className="font-semibold text-gray-900 truncate">
+                {adminName}
+              </h3>
+              <p className="text-sm text-gray-600 truncate">{adminEmail}</p>
             </div>
 
             {/* Navigation */}
@@ -135,8 +138,8 @@ const AdminHeader = () => {
                     onClick={() => handleMenuClick(item.path)}
                     className={`w-full text-left px-4 py-2 rounded-lg text-sm ${
                       isActive
-                        ? "bg-orange-500/20 text-orange-400 border border-orange-500/30"
-                        : "text-gray-300 hover:bg-gray-800/50 hover:text-white"
+                        ? "bg-orange-500/10 text-orange-600 border border-orange-500/30"
+                        : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                     }`}
                   >
                     {item.name}
@@ -145,11 +148,11 @@ const AdminHeader = () => {
               })}
             </div>
 
-            <div className="mt-auto pt-6 border-t border-gray-700/50">
+            <div className="mt-auto pt-6 border-t border-gray-200">
               <button
                 onClick={handleLogout}
                 disabled={isLoggingOut}
-                className="w-full px-4 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-400 text-sm rounded-lg"
+                className="w-full px-4 py-2 bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-red-600 text-sm rounded-lg"
               >
                 {isLoggingOut ? "Signing Out..." : "Sign Out"}
               </button>
@@ -157,7 +160,7 @@ const AdminHeader = () => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

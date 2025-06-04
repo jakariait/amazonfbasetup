@@ -20,13 +20,6 @@ const ContactForm = () => {
     { value: "amazon-fba", label: "Amazon FBA Management" },
     { value: "shopify", label: "Shopify Development & Optimization" },
     { value: "meta-ads", label: "Meta Ads Campaign Management" },
-    { value: "ecommerce-strategy", label: "E-commerce Strategy Consulting" },
-    {
-      value: "performance-analytics",
-      label: "Performance Analytics & Reporting",
-    },
-    { value: "brand-optimization", label: "Brand Optimization" },
-    { value: "full-service", label: "Full-Service Package" },
     { value: "other", label: "Other (Please specify in message)" },
   ];
 

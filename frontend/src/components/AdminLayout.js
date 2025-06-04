@@ -1,13 +1,23 @@
-"use client"
+"use client";
 
+import { useState, useEffect } from "react";
 import AdminSidebar from "@/components/AdminSidebar";
 
 export default function AdminLayout({ children }) {
-  return (
-    <div className=" min-h-screen xl:container xl:mx-auto overflow-hidden">
-      <AdminSidebar />
+	const [isMounted, setIsMounted] = useState(false);
 
-      {children}
-    </div>
-  );
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
+
+	if (!isMounted) {
+		return null;
+	}
+
+	return (
+		<div className="min-h-screen bg-white">
+			<AdminSidebar />
+			<main className="relative text-gray-800">{children}</main>
+		</div>
+	);
 }

@@ -25,6 +25,7 @@ const menuItems = [
   { name: "Success Story", path: "success-story" },
   { name: "FAQs", path: "faqs" },
   { name: "Contact Us", path: "contact-us" },
+  {name: "Blogs", path: "/blogs" },
 ];
 
 export default function Header() {
