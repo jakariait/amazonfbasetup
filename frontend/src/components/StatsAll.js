@@ -9,7 +9,7 @@ const StatsAll = () => {
     { number: "5+", label: "Years Experience", icon: Award },
   ];
   return (
-    <section className="py-16 px-4 border-t border-gray-200">
+    <section className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => {

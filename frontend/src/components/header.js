@@ -117,7 +117,7 @@ export default function Header() {
               alt={getBrandName()}
               className="w-25 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
             />
-            <h1 className={" text-xl text-orange-500"}>Agency</h1>
+            <h1 className={" text-xl font-bold font-serif text-orange-500"}>Agency</h1>
           </div>
         </Link>
 
