@@ -25,7 +25,7 @@ const menuItems = [
   { name: "Success Story", path: "/success-story" },
   { name: "FAQs", path: "/faqs" },
   { name: "Contact Us", path: "/contact-us" },
-  {name: "Blogs", path: "/blogs" },
+  { name: "Blogs", path: "/blogs" },
 ];
 
 export default function Header() {
@@ -111,11 +111,14 @@ export default function Header() {
       <div className="xl:container xl:mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <img
-            src={getBrandLogo()}
-            alt={getBrandName()}
-            className="w-20 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
-          />
+          <div className="flex items-center gap-4" >
+            <img
+              src={getBrandLogo()}
+              alt={getBrandName()}
+              className="w-25 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+            />
+            <h1 className={" text-xl text-orange-500"}>Agency</h1>
+          </div>
         </Link>
 
         {/* Desktop Menu */}
@@ -195,7 +198,7 @@ export default function Header() {
           <button
             onClick={() => setDrawerOpen(true)}
             aria-label="Open menu"
-            className="p-2 text-orange-500 hover:text-orange-600 border-1 border-orange-500 rounded transition-colors duration-200 cursor-pointer"
+            className="p-2 bg-orange-500 text-white rounded-full transition-colors duration-200 cursor-pointer"
           >
             <svg
               className="w-6 h-6"
@@ -232,7 +235,7 @@ export default function Header() {
             <button
               onClick={() => setDrawerOpen(false)}
               aria-label="Close menu"
-              className="p-2 text-orange-500 border-1 border-orange-500 rounded transition-colors cursor-pointer duration-200"
+              className="p-2 bg-orange-500 text-white rounded-full transition-colors cursor-pointer duration-200"
             >
               <svg
                 className="w-6 h-6"

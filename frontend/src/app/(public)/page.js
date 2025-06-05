@@ -6,11 +6,13 @@ import ReadyToScaleCta from "@/components/ReadyToScaleCTA";
 import React from "react";
 import ResultsWeGet from "@/components/ResultsWeGet";
 import StatsAll from "@/components/StatsAll";
+import MarketingHero from "@/components/MarketingHero";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <HeroSection />
+      <MarketingHero/>
       <StatsAll />
       <BrandsWeWorkWith />
       <ResultsWeGet />
