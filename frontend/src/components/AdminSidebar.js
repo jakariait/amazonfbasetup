@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { useRouter, usePathname } from "next/navigation";
 import useAuthAdminStore from "@/store/AuthAdminStore";
 import { getBrandName } from "@/utils/brand";
@@ -19,6 +19,7 @@ const AdminHeader = () => {
     { name: "Blogs", path: "/admin/dashboard/blogs" },
     { name: "Brands", path: "/admin/dashboard/brands" },
     { name: "Results", path: "/admin/dashboard/results" },
+    { name: "FAQ", path: "/admin/dashboard/faq" },
   ];
 
   const handleLogout = async () => {

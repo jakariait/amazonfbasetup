@@ -90,12 +90,7 @@ router.get("/faq", FaqController.getAllFAQs);
 router.get("/faq/:id", FaqController.getSingleFAQ);
 router.patch("/faq/:id", adminProtect, FaqController.updateFAQ);
 router.delete("/faq/:id", adminProtect, FaqController.deleteFAQ);
-router.post(
-  "/faq",
-  adminProtect,
-
-  FaqController.createFAQ,
-);
+router.post("/faq", adminProtect, FaqController.createFAQ);
 
 //  Routes for Brands
 router.post(
