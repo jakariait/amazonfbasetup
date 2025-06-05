@@ -34,7 +34,7 @@ export default function MarketingHero() {
       {/* Grid pattern overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(251,146,60,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(251,146,60,0.08)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
-      <div className="relative z-10 container mx-auto px-6 py-0 flex flex-col lg:flex-row items-center ">
+      <div className="relative z-10 container mx-auto px-6 py-10 flex flex-col lg:flex-row items-center ">
         {/* Left Content */}
         <div
           className={`lg:w-1/2 space-y-8 transform transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}
