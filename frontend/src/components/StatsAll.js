@@ -6,7 +6,7 @@ const StatsAll = () => {
     { number: "500+", label: "Clients Served", icon: Users },
     { number: "300%", label: "Average ROI Increase", icon: TrendingUp },
     { number: "50M+", label: "Revenue Generated", icon: Target },
-    { number: "5+", label: "Years Experience", icon: Award },
+    { number: "8+", label: "Years Experience", icon: Award },
   ];
   return (
     <section className="py-16 px-4">

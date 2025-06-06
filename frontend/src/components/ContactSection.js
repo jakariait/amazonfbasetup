@@ -86,6 +86,10 @@ const ContactSection = () => {
                   <CheckCircle className="w-5 h-5 text-orange-500" />
                   <span className="text-white">ROI-Focused Growth Strategies</span>
                 </div>
+                <div className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-orange-500" />
+                  <span className="text-white">Money Back Guarantee</span>
+                </div>
               </div>
 
               <div className="mt-8 p-4 bg-orange-500 bg-opacity-10 rounded-lg border border-orange-500">

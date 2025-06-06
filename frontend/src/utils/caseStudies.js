@@ -4,7 +4,7 @@ export  const caseStudies = [
   {
     id: 1,
     client: "HealthTech Innovations",
-    industry: "Health & Wellness",
+    // industry: "Health & Wellness",
     service: "Amazon FBA",
     icon: ShoppingCart,
     timeline: "6 months",
@@ -45,7 +45,7 @@ export  const caseStudies = [
   {
     id: 2,
     client: "Urban Style Co.",
-    industry: "Fashion & Apparel",
+    // industry: "Fashion & Apparel",
     service: "Shopify",
     icon: Store,
     timeline: "4 months",
@@ -96,7 +96,7 @@ export  const caseStudies = [
   {
     id: 3,
     client: "GreenHome Solutions",
-    industry: "Home & Garden",
+    // industry: "Home & Garden",
     service: "Meta Ads",
     icon: Share2,
     timeline: "3 months",
@@ -179,5 +179,5 @@ export   const allResults = [
   { metric: "Average Revenue Increase", value: "367%", icon: TrendingUp },
   { metric: "Total Revenue Generated", value: "$2.3M+", icon: DollarSign },
   { metric: "Average ROAS Improvement", value: "450%", icon: Target },
-  { metric: "Successful Case Studies", value: "47", icon: BarChart3 },
+  { metric: "Successful Case Studies", value: "100+", icon: BarChart3 },
 ];

@@ -27,7 +27,7 @@ const BrandsWeWorkWith = () => {
   }, []);
 
   return (
-    <section className=" bg-gray-50 border-b border-gray-200 py-12">
+    <section className=" bg-gray-50 border-b border-gray-200 py-6 md:py-12">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-orange-500 mb-8">
           Brands We Work With
