@@ -292,7 +292,7 @@ export default function FullServiceMetaAgency() {
             Advertising Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From campaign strategy to million-dollar results, we're the only Meta advertising agency you&apos;ll ever need. Our comprehensive services handle every aspect of your Facebook and Instagram marketing.
+            From campaign strategy to million-dollar results, w&apos;re the only Meta advertising agency you&apos;ll ever need. Our comprehensive services handle every aspect of your Facebook and Instagram marketing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
