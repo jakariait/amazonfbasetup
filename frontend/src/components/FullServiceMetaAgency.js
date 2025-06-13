@@ -173,7 +173,7 @@ export default function FullServiceMetaAgency() {
         },
         {
           name: "Policy Compliance",
-          description: "Ensuring all campaigns meet Meta&apos;s advertising policies",
+          description: "Ensuring all campaigns meet Meta's advertising policies",
         },
         {
           name: "24/7 Campaign Monitoring",
@@ -292,7 +292,7 @@ export default function FullServiceMetaAgency() {
             Advertising Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From campaign strategy to million-dollar results, we&apos;re the only Meta advertising agency you&apos;ll ever need. Our comprehensive services handle every aspect of your Facebook and Instagram marketing.
+            From campaign strategy to million-dollar results, we're the only Meta advertising agency you&apos;ll ever need. Our comprehensive services handle every aspect of your Facebook and Instagram marketing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -602,7 +602,7 @@ export default function FullServiceMetaAgency() {
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             Join thousands of successful businesses who trust us to handle their complete Meta advertising operations. Let&apos;s discuss how we can accelerate your growth.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/contact-us">
 
             <button className="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">

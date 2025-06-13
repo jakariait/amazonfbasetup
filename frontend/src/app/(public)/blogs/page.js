@@ -48,7 +48,7 @@ export default async function BlogsPage({ searchParams }) {
       <div className="xl:container xl:mx-auto  p-6">
         <h1 className="text-3xl font-bold mb-6 text-center">Active Blogs</h1>
 
-        <div className="grid grid-cols-3  gap-6 mb-6">
+        <div className="grid  md:grid-cols-3  gap-6 mb-6">
           {blogs.map((blog) => (
             <div key={blog._id} className=" flex flex-col gap-4">
               <div>

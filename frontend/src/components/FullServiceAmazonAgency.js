@@ -61,7 +61,7 @@ export default function FullServiceAmazonAgency() {
         },
         {
           name: "Policy Compliance Management",
-          description: "Ensure adherence to Amazon&apos;s terms and policies",
+          description: "Ensure adherence to Amazon's terms and policies",
         },
         {
           name: "Account Reinstatement",
@@ -290,8 +290,8 @@ export default function FullServiceAmazonAgency() {
             Success Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From account setup to million-dollar sales, we&apos;re the only
-            Amazon agency you&apos;ll ever need. Our comprehensive services
+            From account setup to million-dollar sales, we're the only
+            Amazon agency you'll ever need. Our comprehensive services
             handle every aspect of your Amazon business so you can focus on what
             you do best.
           </p>
@@ -317,7 +317,7 @@ export default function FullServiceAmazonAgency() {
               Trusted by Amazon Sellers Worldwide
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself. We&apos;ve helped hundreds of
+              Our track record speaks for itself. We've helped hundreds of
               businesses succeed on Amazon.
             </p>
           </div>
@@ -530,7 +530,7 @@ export default function FullServiceAmazonAgency() {
                   {
                     title: "Transparent Reporting",
                     description:
-                      "Clear, detailed reports showing exactly what we&apos;re doing and the results we&apos;re achieving.",
+                      "Clear, detailed reports showing exactly what we're doing and the results we're achieving.",
                   },
                   {
                     title: "Proven Track Record",
@@ -540,7 +540,7 @@ export default function FullServiceAmazonAgency() {
                   {
                     title: "Future-Proof Strategies",
                     description:
-                      "We stay ahead of Amazon&apos;s changes and algorithm updates to keep your business competitive.",
+                      "We stay ahead of Amazon's changes and algorithm updates to keep your business competitive.",
                   },
                 ].map((benefit, index) => (
                   <div key={index} className="flex items-start">
@@ -610,7 +610,7 @@ export default function FullServiceAmazonAgency() {
             their complete Amazon operations. Let&apos;s discuss how we can
             accelerate your Amazon success.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/contact-us">
               <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
                 Start Your Amazon Journey

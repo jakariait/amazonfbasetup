@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { getBrandLogo, getBrandName } from "@/utils/brand";
+import {getBrandLogo, getBrandName, getSlogan} from "@/utils/brand";
 
 const menuItems = [
   {
@@ -109,17 +109,17 @@ export default function Header() {
   return (
     <nav className=" border-b border-gray-200 px-4 sticky top-0 z-50 bg-white ">
       <div className="xl:container xl:mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center">
-          <div className="flex items-center gap-4" >
-            <img
-              src={getBrandLogo()}
-              alt={getBrandName()}
-              className="w-25 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
-            />
-            <h1 className={" text-xl font-bold font-serif text-orange-500"}>Agency</h1>
-          </div>
-        </Link>
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <div className="flex-col items-center justify-center gap-4">
+              <img
+                src={getBrandLogo()}
+                alt={getBrandName()}
+                className="w-45 -mt-15 -mb-15 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+              />
+            </div>
+          </Link>
+
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center">

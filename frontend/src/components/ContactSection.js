@@ -1,10 +1,9 @@
-import React from 'react';
-import { Mail, Phone, CheckCircle } from 'lucide-react';
+import React from "react";
+import { Mail, Phone, CheckCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
-import {getCalendlyLink, getWhatsApp} from "@/utils/brand";
+import { getCalendlyLink, getWhatsApp } from "@/utils/brand";
 
 const ContactSection = () => {
-
   const phone = getWhatsApp();
   const link = `https://wa.me/${phone}`;
 
@@ -17,15 +16,15 @@ const ContactSection = () => {
             Get In <span className="text-orange-500">Touch</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Ready to scale your e-commerce business? Let&apos;s discuss how we can help you achieve
-            breakthrough growth with our proven strategies.
+            Ready to scale your e-commerce business? Let&apos;s discuss how we
+            can help you achieve breakthrough growth with our proven strategies.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
 
-          <ContactForm/>
+          <ContactForm />
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Details */}
@@ -40,8 +39,10 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Email Us</h4>
-                    <p className="text-orange-100">hello@youragency.com</p>
-                    <p className="text-orange-100">support@youragency.com</p>
+                    <p className="text-orange-100">hello@amazonfbasetup.com</p>
+                    <p className="text-orange-100">
+                      support@amazonfbasetup.com
+                    </p>
                   </div>
                 </div>
 
@@ -55,36 +56,45 @@ const ContactSection = () => {
                     <p className="text-orange-100">+1 (217) 595-5859</p>
                   </div>
                 </div>
-
-
-
               </div>
             </div>
 
             {/* Why Choose Us */}
             <div className="bg-black rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-white mb-6">Why Choose Us?</h3>
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Why Choose Us?
+              </h3>
 
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-orange-500" />
-                  <span className="text-white">500+ Successful Projects Delivered</span>
+                  <span className="text-white">
+                    500+ Successful Projects Delivered
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-orange-500" />
-                  <span className="text-white">$50M+ Revenue Generated for Clients</span>
+                  <span className="text-white">
+                    $50M+ Revenue Generated for Clients
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-orange-500" />
-                  <span className="text-white">24/7 Dedicated Support Team</span>
+                  <span className="text-white">
+                    24/7 Dedicated Support Team
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-orange-500" />
-                  <span className="text-white">Free Strategy Session Included</span>
+                  <span className="text-white">
+                    Free Strategy Session Included
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-orange-500" />
-                  <span className="text-white">ROI-Focused Growth Strategies</span>
+                  <span className="text-white">
+                    ROI-Focused Growth Strategies
+                  </span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <CheckCircle className="w-5 h-5 text-orange-500" />
@@ -110,7 +120,8 @@ const ContactSection = () => {
               Ready to Scale Your Business?
             </h3>
             <p className="text-orange-100 mb-6">
-              Book a free 30-minute strategy call and discover how we can help you achieve breakthrough growth.
+              Book a free 30-minute strategy call and discover how we can help
+              you achieve breakthrough growth.
             </p>
             <a
               href={getCalendlyLink()}
@@ -120,9 +131,6 @@ const ContactSection = () => {
               <button className="bg-white text-orange-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors cursor-pointer">
                 Schedule Free Consultation
               </button>
-
-
-
             </a>
           </div>
         </div>

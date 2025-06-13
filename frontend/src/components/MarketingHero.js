@@ -1,12 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Zap} from "lucide-react";
+import { Zap } from "lucide-react";
 import Link from "next/link";
 import StatsAll from "@/components/StatsAll";
 
 export default function MarketingHero() {
   const [isVisible, setIsVisible] = useState(false);
-
 
   const services = [
     { name: "Amazon Brand Building", link: "/amazon" },
@@ -14,11 +13,9 @@ export default function MarketingHero() {
     { name: "Meta Ads Management", link: "/meta" },
   ];
 
-
   useEffect(() => {
     setIsVisible(true);
-    const interval = setInterval(() => {
-    }, 3000);
+    const interval = setInterval(() => {}, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -42,7 +39,7 @@ export default function MarketingHero() {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-full text-orange-700 text-sm font-medium backdrop-blur-sm">
             <Zap className="w-4 h-4 mr-2" />
-            #1 Digital Growth Partner
+            #1 Amazon Growth Partner
           </div>
 
           {/* Main Headline */}
@@ -50,7 +47,7 @@ export default function MarketingHero() {
             <h1 className="text-5xl lg:text-7xl font-black text-gray-900 leading-tight">
               Scale Your
               <span className="block bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent">
-                Digital Empire
+                Amazon Empire
               </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
@@ -67,7 +64,9 @@ export default function MarketingHero() {
                 key={service.name}
                 href={service.link}
                 className={`px-4 py-2 bg-white/80 border border-gray-200 rounded-lg text-gray-700 text-sm backdrop-blur-sm transform transition-all duration-500 hover:border-orange-500/50 hover:text-orange-600 hover:bg-orange-50 ${
-                  isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+                  isVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-4 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
@@ -89,8 +88,6 @@ export default function MarketingHero() {
               </button>
             </Link>
           </div>
-
-
         </div>
 
         {/* Right Content - Visual Element */}
@@ -119,12 +116,10 @@ export default function MarketingHero() {
               </div>
             </div>
           </div>
-
         </div>
       </div>
 
       <StatsAll />
-
     </div>
   );
 }

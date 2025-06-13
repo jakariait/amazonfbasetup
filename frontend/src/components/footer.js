@@ -1,6 +1,7 @@
 import React from "react";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import {getBrandLogo, getBrandName} from "@/utils/brand";
+import {getBrandLogo, getBrandName, getSlogan} from "@/utils/brand";
+import Link from "next/link";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,14 +30,16 @@ const Footer = () => {
       <div className="xl:container xl:mx-auto  flex flex-col justify-between">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
           {/* Logo/Brand */}
-          <div className="flex flex-col items-center justify-center">
-            <img
-              src={getBrandLogo()}
-              alt={getBrandName()}
-              className="w-20 -m-2 cursor-pointer hover:opacity-90 transition-opacity duration-200"
-            />
-            <p className="text-black text-sm mt-1">E-commerce Growth Experts</p>
-          </div>
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <div className="flex-col items-center justify-center gap-4">
+              <img
+                src={getBrandLogo()}
+                alt={getBrandName()}
+                className="w-45 -mt-15 -mb-15 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+              />
+            </div>
+          </Link>
 
           {/* Social Media Links */}
           <div className="flex items-center space-x-4">
