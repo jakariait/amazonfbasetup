@@ -290,8 +290,8 @@ export default function FullServiceAmazonAgency() {
             Success Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From account setup to million-dollar sales, we're the only
-            Amazon agency you'll ever need. Our comprehensive services
+            From account setup to million-dollar sales, we&apos;re the only
+            Amazon agency you&apos;ll ever need. Our comprehensive services
             handle every aspect of your Amazon business so you can focus on what
             you do best.
           </p>
@@ -317,7 +317,7 @@ export default function FullServiceAmazonAgency() {
               Trusted by Amazon Sellers Worldwide
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself. We've helped hundreds of
+              Our track record speaks for itself. We&apos;ve helped hundreds of
               businesses succeed on Amazon.
             </p>
           </div>
