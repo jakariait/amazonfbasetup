@@ -39,10 +39,13 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Email Us</h4>
-                    <p className="text-orange-100">hello@amazonfbasetup.com</p>
                     <p className="text-orange-100">
-                      support@amazonfbasetup.com
+                      <a href="mailto:hello@amazonfbasetup.com">hello@amazonfbasetup.com</a>
                     </p>
+                    <p className="text-orange-100">
+                      <a href="mailto:support@amazonfbasetup.com">support@amazonfbasetup.com</a>
+                    </p>
+
                   </div>
                 </div>
 
@@ -53,7 +56,9 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-lg">Call Us</h4>
-                    <p className="text-orange-100">+1 (217) 595-5859</p>
+                    <p className="text-orange-100">
+                      <a href="tel:+12175955859">+1 (217) 595-5859</a>
+                    </p>
                   </div>
                 </div>
               </div>
