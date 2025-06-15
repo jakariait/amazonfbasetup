@@ -7,8 +7,6 @@ import ReadyToScaleCta from "@/components/ReadyToScaleCTA";
 import StatsAll from "@/components/StatsAll";
 
 export default function AboutUs() {
-
-
   const team = [
     {
       name: "Sarah Chen",
@@ -54,9 +52,45 @@ export default function AboutUs() {
           </p>
         </div>
       </section>
-
+      {/* Team Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-6 text-gray-900">
+              Meet TEES Team
+            </h2>
+            <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
+            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+              The experts behind your success – each with proven track records
+              in driving measurable growth
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <div key={index} className="text-center group">
+                <div className="relative mb-6 mx-auto w-48 h-48">
+                  <div className="w-full h-full bg-gradient-to-br from-orange-500/10 to-orange-500/5 rounded-2xl flex items-center justify-center border border-gray-200 group-hover:border-orange-500/50 transition-all duration-300">
+                    <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center">
+                      <Users className="w-16 h-16 text-gray-400" />
+                    </div>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                  {member.name}
+                </h3>
+                <div className="text-orange-500 font-medium mb-4">
+                  {member.role}
+                </div>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {member.expertise}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* Stats Section */}
-      <StatsAll/>
+      <StatsAll />
       <BrandsWeWorkWith />
 
       {/* Our Story Section */}
@@ -93,44 +127,6 @@ export default function AboutUs() {
       </section>
 
       <OurExpertise />
-
-      {/* Team Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Meet Our Team
-            </h2>
-            <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
-            <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              The experts behind your success – each with proven track records
-              in driving measurable growth
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-6 mx-auto w-48 h-48">
-                  <div className="w-full h-full bg-gradient-to-br from-orange-500/10 to-orange-500/5 rounded-2xl flex items-center justify-center border border-gray-200 group-hover:border-orange-500/50 transition-all duration-300">
-                    <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center">
-                      <Users className="w-16 h-16 text-gray-400" />
-                    </div>
-                  </div>
-                </div>
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                  {member.name}
-                </h3>
-                <div className="text-orange-500 font-medium mb-4">
-                  {member.role}
-                </div>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {member.expertise}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <ReadyToScaleCta />
