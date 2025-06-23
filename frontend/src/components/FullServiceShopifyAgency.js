@@ -15,6 +15,9 @@ import {
   Palette,
   Code,
 } from "lucide-react";
+import { getCalendlyLink } from "@/utils/brand";
+import Link from "next/link";
+
 
 export default function FullServiceShopifyAgency() {
   const agencyStats = [
@@ -300,9 +303,15 @@ export default function FullServiceShopifyAgency() {
             what you do best.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
-              Get Your Free Store Audit
-            </button>
+            <a
+              href={getCalendlyLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                Get Your Free Store Audit
+              </button>
+            </a>
           </div>
         </div>
       </section>
@@ -580,9 +589,15 @@ export default function FullServiceShopifyAgency() {
                   </div>
                 ))}
               </div>
-              <button className="w-full px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
-                Get Your Free Store Audit
-              </button>
+              <a
+                href={getCalendlyLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="w-full px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                  Get Your Free Store Audit
+                </button>
+              </a>
               <div className="text-center text-gray-500 text-sm mt-4">
                 No commitment required • 100% confidential
               </div>
@@ -603,12 +618,21 @@ export default function FullServiceShopifyAgency() {
             accelerate your online success.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact-us">
+
             <button className="px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
               Start Your Shopify Journey
             </button>
-            <button className="px-8 py-4 border-2 border-green-600 text-green-600 font-bold rounded-lg hover:bg-green-600 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer">
-              Schedule Strategy Call <ExternalLink className="w-4 h-4 ml-2" />
-            </button>
+              </Link>
+            <a
+              href={getCalendlyLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="px-8 py-4 border-2 border-green-600 text-green-600 font-bold rounded-lg hover:bg-green-600 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer">
+                Schedule Strategy Call <ExternalLink className="w-4 h-4 ml-2" />
+              </button>
+            </a>
           </div>
 
           <div className="mt-8 text-gray-500 text-sm">

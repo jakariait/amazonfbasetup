@@ -25,7 +25,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-orange-100 px-4 py-3">
+    <footer className="bg-orange-100 px-4 py-3 ">
       {/* Bottom Section */}
       <div className="xl:container xl:mx-auto  flex flex-col justify-between">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
