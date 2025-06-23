@@ -6,6 +6,7 @@ import React from "react";
 import ResultsWeGet from "@/components/ResultsWeGet";
 import MarketingHero from "@/components/MarketingHero";
 
+
 export default function Home() {
   return (
     <main className="min-h-screen">

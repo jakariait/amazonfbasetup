@@ -17,8 +17,17 @@ import {
 } from "lucide-react";
 import { getCalendlyLink } from "@/utils/brand";
 import Link from "next/link";
+import { gtmPushEvent } from "@/utils/gtm";
 
 export default function FullServiceAmazonAgency() {
+  const handleClick = (buttonName, destination) => {
+    gtmPushEvent("button_click", {
+      buttonName,
+      category: "Navigation",
+      destination,
+    });
+  };
+
   const agencyStats = [
     {
       metric: "Clients Served",
@@ -301,9 +310,9 @@ export default function FullServiceAmazonAgency() {
               target="_blank"
               rel="noopener noreferrer"
             >
-            <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
-              Get Your Free Amazon Audit
-            </button>
+              <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                Get Your Free Amazon Audit
+              </button>
             </a>
           </div>
         </div>
@@ -586,9 +595,9 @@ export default function FullServiceAmazonAgency() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <button className="w-full px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
-                Get Your Free Amazon Audit
-              </button>
+                <button className="w-full px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                  Get Your Free Amazon Audit
+                </button>
               </a>
 
               <div className="text-center text-gray-500 text-sm mt-4">

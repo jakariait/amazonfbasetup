@@ -3,8 +3,17 @@ import React, { useState, useEffect } from "react";
 import { Zap } from "lucide-react";
 import Link from "next/link";
 import StatsAll from "@/components/StatsAll";
+import { gtmPushEvent } from "@/utils/gtm";
 
 export default function MarketingHero() {
+  const handleClick = (buttonName, destination) => {
+    gtmPushEvent("button_click", {
+      buttonName,
+      category: "Navigation",
+      destination,
+    });
+  };
+
   const [isVisible, setIsVisible] = useState(false);
 
   const services = [
@@ -69,6 +78,10 @@ export default function MarketingHero() {
                     : "translate-y-4 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
+
+                onClick={() =>
+                  handleClick(service.name, service.link)
+                }
               >
                 {service.name}
               </Link>
@@ -77,13 +90,23 @@ export default function MarketingHero() {
 
           <div className="flex flex-col md:flex-row gap-4 justify-center ">
             <Link href="/contact-us">
-              <button className="bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 cursor-pointer">
+              <button
+                onClick={() =>
+                  handleClick("Boost My Amazon Sales", "/contact-us")
+                }
+                className="bg-orange-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 cursor-pointer"
+              >
                 Boost My Amazon Sales
               </button>
             </Link>
 
             <Link href="/amazon">
-              <button className="border-2 border-orange-500 text-orange-500 px-4 py-2 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer">
+              <button
+                onClick={() =>
+                  handleClick("Solve My Amazon Problem", "/amazon")
+                }
+                className="border-2 border-orange-500 text-orange-500 px-4 py-2 rounded-lg font-semibold hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer"
+              >
                 Solve My Amazon Problem
               </button>
             </Link>
