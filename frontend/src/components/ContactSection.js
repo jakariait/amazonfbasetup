@@ -1,9 +1,19 @@
+"use client";
 import React from "react";
 import { Mail, Phone, CheckCircle } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { getCalendlyLink, getWhatsApp } from "@/utils/brand";
+import { gtmPushEvent } from "@/utils/gtm";
 
 const ContactSection = () => {
+  const handleClick = (buttonName, destination) => {
+    gtmPushEvent("button_click", {
+      buttonName,
+      category: "Navigation",
+      destination,
+    });
+  };
+
   const phone = getWhatsApp();
   const link = `https://wa.me/${phone}`;
 
@@ -40,12 +50,15 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-lg">Email Us</h4>
                     <p className="text-orange-100">
-                      <a href="mailto:hello@amazonfbasetup.com">hello@amazonfbasetup.com</a>
+                      <a href="mailto:hello@amazonfbasetup.com">
+                        hello@amazonfbasetup.com
+                      </a>
                     </p>
                     <p className="text-orange-100">
-                      <a href="mailto:support@amazonfbasetup.com">support@amazonfbasetup.com</a>
+                      <a href="mailto:support@amazonfbasetup.com">
+                        support@amazonfbasetup.com
+                      </a>
                     </p>
-
                   </div>
                 </div>
 
@@ -133,7 +146,12 @@ const ContactSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="bg-white text-orange-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors cursor-pointer">
+              <button
+                onClick={() =>
+                  handleClick("Schedule Free Consultation", getCalendlyLink())
+                }
+                className="bg-white text-orange-500 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors cursor-pointer"
+              >
                 Schedule Free Consultation
               </button>
             </a>

@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   Users,
@@ -14,10 +15,19 @@ import {
   Camera,
   Smartphone,
 } from "lucide-react";
-import {getCalendlyLink} from "@/utils/brand";
+import { getCalendlyLink } from "@/utils/brand";
 import Link from "next/link";
+import { gtmPushEvent } from "@/utils/gtm";
 
 export default function FullServiceMetaAgency() {
+  const handleClick = (buttonName, destination) => {
+    gtmPushEvent("button_click", {
+      buttonName,
+      category: "Navigation",
+      destination,
+    });
+  };
+
   const agencyStats = [
     {
       metric: "Campaigns Launched",
@@ -75,8 +85,7 @@ export default function FullServiceMetaAgency() {
       services: [
         {
           name: "Video Ad Creation",
-          description:
-            "High-converting video ads for Facebook and Instagram",
+          description: "High-converting video ads for Facebook and Instagram",
         },
         {
           name: "Static Image Design",
@@ -142,8 +151,7 @@ export default function FullServiceMetaAgency() {
       services: [
         {
           name: "Performance Dashboards",
-          description:
-            "Real-time campaign performance and ROI tracking",
+          description: "Real-time campaign performance and ROI tracking",
         },
         {
           name: "Attribution Modeling",
@@ -173,7 +181,8 @@ export default function FullServiceMetaAgency() {
         },
         {
           name: "Policy Compliance",
-          description: "Ensuring all campaigns meet Meta's advertising policies",
+          description:
+            "Ensuring all campaigns meet Meta's advertising policies",
         },
         {
           name: "24/7 Campaign Monitoring",
@@ -292,7 +301,10 @@ export default function FullServiceMetaAgency() {
             Advertising Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From campaign strategy to million-dollar results, w&apos;re the only Meta advertising agency you&apos;ll ever need. Our comprehensive services handle every aspect of your Facebook and Instagram marketing.
+            From campaign strategy to million-dollar results, w&apos;re the only
+            Meta advertising agency you&apos;ll ever need. Our comprehensive
+            services handle every aspect of your Facebook and Instagram
+            marketing.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -300,9 +312,14 @@ export default function FullServiceMetaAgency() {
               target="_blank"
               rel="noopener noreferrer"
             >
-            <button className="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
-              Get Your Free Meta Audit
-            </button>
+              <button
+                onClick={() =>
+                  handleClick("Get Your Free Meta Audit", getCalendlyLink())
+                }
+                className="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer"
+              >
+                Get Your Free Meta Audit
+              </button>
             </a>
           </div>
         </div>
@@ -316,7 +333,8 @@ export default function FullServiceMetaAgency() {
               Trusted by Brands Across All Industries
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself. We&apos;ve helped thousands of businesses succeed with Meta advertising.
+              Our track record speaks for itself. We&apos;ve helped thousands of
+              businesses succeed with Meta advertising.
             </p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -352,7 +370,9 @@ export default function FullServiceMetaAgency() {
             </h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Everything you need to dominate Facebook and Instagram advertising, all under one roof. No need to manage multiple vendors or agencies.
+              Everything you need to dominate Facebook and Instagram
+              advertising, all under one roof. No need to manage multiple
+              vendors or agencies.
             </p>
           </div>
 
@@ -404,7 +424,9 @@ export default function FullServiceMetaAgency() {
             </h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Whether you&apos;re a startup looking to build awareness or an enterprise scaling your advertising efforts, we have the expertise to drive results.
+              Whether you&apos;re a startup looking to build awareness or an
+              enterprise scaling your advertising efforts, we have the expertise
+              to drive results.
             </p>
           </div>
 
@@ -455,7 +477,8 @@ export default function FullServiceMetaAgency() {
             </h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              A systematic approach that&apos;s helped thousands of businesses achieve Meta advertising success
+              A systematic approach that&apos;s helped thousands of businesses
+              achieve Meta advertising success
             </p>
           </div>
 
@@ -559,7 +582,8 @@ export default function FullServiceMetaAgency() {
                   Ready to Dominate Meta Advertising?
                 </h3>
                 <p className="text-gray-600">
-                  Get a comprehensive analysis of your Meta advertising potential
+                  Get a comprehensive analysis of your Meta advertising
+                  potential
                 </p>
               </div>
 
@@ -581,9 +605,14 @@ export default function FullServiceMetaAgency() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-              <button className="w-full px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
-                Get Your Free Meta Audit
-              </button>
+                <button
+                  onClick={() =>
+                    handleClick("Get Your Free Meta Audit", getCalendlyLink())
+                  }
+                  className="w-full px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer"
+                >
+                  Get Your Free Meta Audit
+                </button>
               </a>
               <div className="text-center text-gray-500 text-sm mt-4">
                 No commitment required • 100% confidential
@@ -600,14 +629,20 @@ export default function FullServiceMetaAgency() {
             Ready to Transform Your Meta Advertising?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join thousands of successful businesses who trust us to handle their complete Meta advertising operations. Let&apos;s discuss how we can accelerate your growth.
+            Join thousands of successful businesses who trust us to handle their
+            complete Meta advertising operations. Let&apos;s discuss how we can
+            accelerate your growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/contact-us">
-
-            <button className="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
-              Start Your Meta Journey
-            </button>
+              <button
+                onClick={() =>
+                  handleClick(" Start Your Meta Journey", "/contact-us")
+                }
+                className="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer"
+              >
+                Start Your Meta Journey
+              </button>
             </Link>
 
             <a
@@ -615,18 +650,20 @@ export default function FullServiceMetaAgency() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Link href="/contact-us">
-
-              <button className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-bold rounded-lg hover:bg-blue-600 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer">
-              Schedule Strategy Call <ExternalLink className="w-4 h-4 ml-2" />
-            </button>
-              </Link>
-
+              <button
+                onClick={() =>
+                  handleClick("Schedule Strategy Call", getCalendlyLink())
+                }
+                className="px-8 py-4 border-2 border-blue-600 text-blue-600 font-bold rounded-lg hover:bg-blue-600 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer"
+              >
+                Schedule Strategy Call <ExternalLink className="w-4 h-4 ml-2" />
+              </button>
             </a>
           </div>
 
           <div className="mt-8 text-gray-500 text-sm">
-            Free consultation includes: Account audit • Campaign strategy • ROI projections • Team introduction
+            Free consultation includes: Account audit • Campaign strategy • ROI
+            projections • Team introduction
           </div>
         </div>
       </section>

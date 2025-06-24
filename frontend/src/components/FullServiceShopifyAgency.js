@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import {
   ShoppingBag,
@@ -17,9 +18,20 @@ import {
 } from "lucide-react";
 import { getCalendlyLink } from "@/utils/brand";
 import Link from "next/link";
+import {gtmPushEvent} from "@/utils/gtm";
 
 
 export default function FullServiceShopifyAgency() {
+
+  const handleClick = (buttonName, destination) => {
+    gtmPushEvent("button_click", {
+      buttonName,
+      category: "Navigation",
+      destination,
+    });
+  };
+
+
   const agencyStats = [
     {
       metric: "Stores Built",
@@ -308,7 +320,11 @@ export default function FullServiceShopifyAgency() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+              <button
+                onClick={() =>
+                  handleClick("Get Your Free Store Audit", getCalendlyLink())
+                }
+                className="px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
                 Get Your Free Store Audit
               </button>
             </a>
@@ -594,7 +610,11 @@ export default function FullServiceShopifyAgency() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="w-full px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                <button
+                  onClick={() =>
+                    handleClick("Get Your Free Store Audit", getCalendlyLink())
+                  }
+                  className="w-full px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
                   Get Your Free Store Audit
                 </button>
               </a>
@@ -620,7 +640,13 @@ export default function FullServiceShopifyAgency() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact-us">
 
-            <button className="px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+            <button
+
+              onClick={() =>
+                handleClick("Start Your Shopify Journey", "/contact-us")
+              }
+
+              className="px-8 py-4 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
               Start Your Shopify Journey
             </button>
               </Link>
@@ -629,7 +655,11 @@ export default function FullServiceShopifyAgency() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="px-8 py-4 border-2 border-green-600 text-green-600 font-bold rounded-lg hover:bg-green-600 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer">
+              <button
+                onClick={() =>
+                  handleClick("Schedule Strategy Call", getCalendlyLink())
+                }
+                className="px-8 py-4 border-2 border-green-600 text-green-600 font-bold rounded-lg hover:bg-green-600 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer">
                 Schedule Strategy Call <ExternalLink className="w-4 h-4 ml-2" />
               </button>
             </a>

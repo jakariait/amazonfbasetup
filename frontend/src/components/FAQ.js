@@ -1,10 +1,22 @@
+"use client"
 import React from "react";
 import { HelpCircle, MessageCircle, Clock } from "lucide-react";
 import { getCalendlyLink } from "@/utils/brand";
 import Link from "next/link";
 import UserFAQ from "@/components/UserFAQ";
+import {gtmPushEvent} from "@/utils/gtm";
 
 export default function FAQ() {
+
+
+  const handleClick = (buttonName, destination) => {
+    gtmPushEvent("button_click", {
+      buttonName,
+      category: "Navigation",
+      destination,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
@@ -51,13 +63,23 @@ export default function FAQ() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                <button
+                  onClick={() =>
+                    handleClick("Schedule Free Consultation", getCalendlyLink())
+                  }
+                  className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
                   Schedule Free Consultation
                 </button>
               </a>
 
               <Link href="/contact-us">
-                <button className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer">
+                <button
+
+                  onClick={() =>
+                    handleClick("Contact Support", "/contact-us")
+                  }
+
+                  className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer">
                   Contact Support
                 </button>
               </Link>

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Send } from "lucide-react";
+import {gtmPushEvent} from "@/utils/gtm";
 
 const ContactForm = () => {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -51,6 +52,19 @@ const ContactForm = () => {
       });
 
       if (res.ok) {
+
+
+        // ✅ Fire GTM event on success
+        gtmPushEvent("form_submission", {
+          formType: "ContactForm",
+          fullName: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          service: formData.service,
+          message: formData.message,
+        });
+
+
         setSuccessMsg("✅ Message sent successfully!");
         setFormData({
           name: "",

@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import {
   ShoppingCart,
@@ -310,7 +311,12 @@ export default function FullServiceAmazonAgency() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+              <button
+
+                onClick={() =>
+                  handleClick("Get Your Free Amazon Audit", getCalendlyLink())
+                }
+                className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
                 Get Your Free Amazon Audit
               </button>
             </a>
@@ -595,7 +601,11 @@ export default function FullServiceAmazonAgency() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="w-full px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                <button
+                  onClick={() =>
+                    handleClick("Get Your Free Amazon Audit", getCalendlyLink())
+                  }
+                  className="w-full px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
                   Get Your Free Amazon Audit
                 </button>
               </a>
@@ -621,7 +631,11 @@ export default function FullServiceAmazonAgency() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/contact-us">
-              <button className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+              <button
+                onClick={() =>
+                  handleClick("Start Your Amazon Journey", "/contact-us")
+                }
+                className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
                 Start Your Amazon Journey
               </button>
             </Link>
@@ -631,7 +645,11 @@ export default function FullServiceAmazonAgency() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer">
+              <button
+                onClick={() =>
+                  handleClick("Get Your Free Amazon Audit", getCalendlyLink())
+                }
+                className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer">
                 Schedule Strategy Call <ExternalLink className="w-4 h-4 ml-2" />
               </button>
             </a>
