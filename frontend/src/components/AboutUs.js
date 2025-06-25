@@ -80,7 +80,7 @@ export default function AboutUs() {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full object-contain "
                   />
                 </div>
 
