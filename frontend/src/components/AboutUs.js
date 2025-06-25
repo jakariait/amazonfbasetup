@@ -1,6 +1,5 @@
 import React from "react";
-import { TrendingUp, Users, Award, Target } from "lucide-react";
-
+import { TrendingUp } from "lucide-react";
 import OurExpertise from "@/components/OurExpertise";
 import BrandsWeWorkWith from "@/components/BrandsWeWorkWith";
 import ReadyToScaleCta from "@/components/ReadyToScaleCTA";
@@ -9,23 +8,32 @@ import StatsAll from "@/components/StatsAll";
 export default function AboutUs() {
   const team = [
     {
-      name: "Sarah Chen",
-      role: "CEO & Amazon FBA Specialist",
-      image: "/api/placeholder/300/300",
-      expertise: "7+ years scaling Amazon businesses from $0 to 7-figures",
-    },
-    {
-      name: "Marcus Rodriguez",
-      role: "Shopify Development Lead",
-      image: "/api/placeholder/300/300",
+      name: "Tonmoy",
+      role: "CEO & E-commerce Specialist",
+      image: "/tonmoy.jpeg",
       expertise:
-        "Expert in conversion optimization and custom e-commerce solutions",
+        "Hi, I'm Tonmoy, leading a team in amazon and digital marketing for bigger scale. We focus on boosting online sales and brand visibility. With smart strategies and a dedicated team, we're all about delivering results and staying ahead in the digital game.",
     },
     {
-      name: "Emma Thompson",
-      role: "Meta Ads Strategist",
-      image: "/api/placeholder/300/300",
-      expertise: "Managed $2M+ in ad spend with average 4x ROAS",
+      name: "Sohan",
+      role: "Researcher & Advertisement Specialist",
+      image: "/sohan.jpeg",
+      expertise:
+        "I help brands grow on Amazon with data-driven product research, SEO-optimized listings, and high-converting PPC campaigns. From finding winning products to scaling sales with targeted ads, I provide end-to-end solutions that drive real results.",
+    },
+    {
+      name: "Sakib",
+      role: "Amazon Specialist",
+      image: "/sakib.jpeg",
+      expertise:
+        "This is Sakib, an Amazon Specialist with 7 years of experience in FBA/FBM, product listing optimization, PPC advertising, store management, and Amazon business setup. I helps brands launch, manage, and expand their businesses on Amazon through tailored strategies that drive growth and long-term success.",
+    },
+    {
+      name: "Emon",
+      role: "Meta Ads Specialist",
+      image: "/emon.jpeg",
+      expertise:
+        "I’m Emon, a results-driven Facebook Ads and digital marketing expert with a passion for building powerful strategies that deliver real impact. I specialize in driving highly targeted traffic, boosting conversions, and scaling brands through data-backed, high-performing Facebook campaigns. Whether it’s growing a new brand or optimizing an existing one, I focus on what matters most — results.",
     },
   ];
 
@@ -65,16 +73,17 @@ export default function AboutUs() {
               in driving measurable growth
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8">
             {team.map((member, index) => (
               <div key={index} className="text-center group">
-                <div className="relative mb-6 mx-auto w-48 h-48">
-                  <div className="w-full h-full bg-gradient-to-br from-orange-500/10 to-orange-500/5 rounded-2xl flex items-center justify-center border border-gray-200 group-hover:border-orange-500/50 transition-all duration-300">
-                    <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center">
-                      <Users className="w-16 h-16 text-gray-400" />
-                    </div>
-                  </div>
+                <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
+
                 <h3 className="text-2xl font-bold mb-2 text-gray-900">
                   {member.name}
                 </h3>

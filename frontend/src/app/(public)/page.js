@@ -14,7 +14,7 @@ export default function Home() {
       <BrandsWeWorkWith />
       <ResultsWeGet />
       <OurExpertise />
-      <CaseStudiesSample />
+      <CaseStudiesSample />s
       {/* CTA Section */}
       <ReadyToScaleCta />
     </main>
