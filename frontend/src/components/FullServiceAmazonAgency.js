@@ -23,18 +23,6 @@ import { gtmPushEvent } from "@/utils/gtm";
 export default function FullServiceAmazonAgency() {
 
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && typeof window.fbq === "function") {
-      window.fbq("track", "ViewContent", {
-        content_name: "Amazon", // Optional
-      });
-
-      console.log("✅ ViewContent event fired without product data");
-    } else {
-      console.warn("⚠️ Facebook Pixel not initialized");
-    }
-  }, []);
-
 
   const handleClick = (buttonName, destination) => {
     gtmPushEvent("button_click", {
