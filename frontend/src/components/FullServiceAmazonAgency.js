@@ -1,5 +1,5 @@
-"use client"
-import React from "react";
+"use client";
+import React, {useEffect} from "react";
 import {
   ShoppingCart,
   Package,
@@ -21,6 +21,21 @@ import Link from "next/link";
 import { gtmPushEvent } from "@/utils/gtm";
 
 export default function FullServiceAmazonAgency() {
+
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && typeof window.fbq === "function") {
+      window.fbq("track", "ViewContent", {
+        content_name: "Amazon", // Optional
+      });
+
+      console.log("✅ ViewContent event fired without product data");
+    } else {
+      console.warn("⚠️ Facebook Pixel not initialized");
+    }
+  }, []);
+
+
   const handleClick = (buttonName, destination) => {
     gtmPushEvent("button_click", {
       buttonName,
@@ -312,11 +327,11 @@ export default function FullServiceAmazonAgency() {
               rel="noopener noreferrer"
             >
               <button
-
                 onClick={() =>
                   handleClick("Get Your Free Amazon Audit", getCalendlyLink())
                 }
-                className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer"
+              >
                 Get Your Free Amazon Audit
               </button>
             </a>
@@ -605,7 +620,8 @@ export default function FullServiceAmazonAgency() {
                   onClick={() =>
                     handleClick("Get Your Free Amazon Audit", getCalendlyLink())
                   }
-                  className="w-full px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                  className="w-full px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer"
+                >
                   Get Your Free Amazon Audit
                 </button>
               </a>
@@ -635,7 +651,8 @@ export default function FullServiceAmazonAgency() {
                 onClick={() =>
                   handleClick("Start Your Amazon Journey", "/contact-us")
                 }
-                className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer"
+              >
                 Start Your Amazon Journey
               </button>
             </Link>
@@ -649,7 +666,8 @@ export default function FullServiceAmazonAgency() {
                 onClick={() =>
                   handleClick("Get Your Free Amazon Audit", getCalendlyLink())
                 }
-                className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer">
+                className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer"
+              >
                 Schedule Strategy Call <ExternalLink className="w-4 h-4 ml-2" />
               </button>
             </a>

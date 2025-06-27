@@ -6,6 +6,11 @@ import ReadyToScaleCta from "@/components/ReadyToScaleCTA";
 import StatsAll from "@/components/StatsAll";
 
 export default function AboutUs() {
+
+
+
+
+
   const team = [
     {
       name: "Tonmoy",

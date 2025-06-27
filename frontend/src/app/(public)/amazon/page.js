@@ -4,6 +4,8 @@ import {getHomePageTitle} from "@/utils/brand";
 export const metadata = {
   title: `Amazon | ${getHomePageTitle()}`,
 };
+
+
 const Page = () => {
   return (
     <div>

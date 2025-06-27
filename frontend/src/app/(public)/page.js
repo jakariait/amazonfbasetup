@@ -6,16 +6,14 @@ import React from "react";
 import ResultsWeGet from "@/components/ResultsWeGet";
 import MarketingHero from "@/components/MarketingHero";
 
-
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <MarketingHero/>
+      <MarketingHero />
       <BrandsWeWorkWith />
       <ResultsWeGet />
       <OurExpertise />
-      <CaseStudiesSample />s
-      {/* CTA Section */}
+      <CaseStudiesSample />s{/* CTA Section */}
       <ReadyToScaleCta />
     </main>
   );
