@@ -1,3 +1,4 @@
+"use client"
 import ImageComponent from "@/components/ImageComponent";
 import Link from "next/link";
 import { getHomePageTitle } from "@/utils/brand";
