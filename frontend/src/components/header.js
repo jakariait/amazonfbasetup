@@ -115,7 +115,7 @@ export default function Header() {
               <img
                 src={getBrandLogo()}
                 alt={getBrandName()}
-                className="w-45 -mt-15 -mb-15 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                className="w-40   cursor-pointer hover:opacity-90 transition-opacity duration-200"
               />
             </div>
           </Link>

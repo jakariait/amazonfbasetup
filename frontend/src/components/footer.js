@@ -1,6 +1,6 @@
 import React from "react";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
-import {getBrandLogo, getBrandName, getSlogan} from "@/utils/brand";
+import { getBrandLogo, getBrandName, getSlogan } from "@/utils/brand";
 import Link from "next/link";
 
 const Footer = () => {
@@ -21,7 +21,7 @@ const Footer = () => {
       icon: Linkedin,
       href: "https://www.linkedin.com/in/tess-agency/",
       label: "LinkedIn",
-    }
+    },
   ];
 
   return (
@@ -36,7 +36,7 @@ const Footer = () => {
               <img
                 src={getBrandLogo()}
                 alt={getBrandName()}
-                className="w-45 -mt-15 -mb-15 cursor-pointer hover:opacity-90 transition-opacity duration-200"
+                className="w-40  cursor-pointer hover:opacity-90 transition-opacity duration-200"
               />
             </div>
           </Link>
