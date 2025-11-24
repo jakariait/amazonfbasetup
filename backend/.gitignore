@@ -33,3 +33,6 @@ coverage/
 
 # Optional for MongoDB
 dump/
+
+# Ignore uploaded files
+uploads/
