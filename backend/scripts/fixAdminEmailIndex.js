@@ -1,6 +1,10 @@
 const mongoose = require("mongoose");
+import dotenv from "dotenv";
 
-const MONGODB_URI = "mongodb+srv://jakariait:Jg0njUydl1srGwDE@jakaria.kd2ej.mongodb.net/AmazonFBASetup?retryWrites=true&w=majority"; // 🔁 Replace with your real connection string
+dotenv.config();
+
+
+const MONGODB_URI = process.env.MONGO_URI;
 
 const adminSchema = new mongoose.Schema(
   {
