@@ -13,7 +13,7 @@ export default function Home() {
       <BrandsWeWorkWith />
       <ResultsWeGet />
       <OurExpertise />
-      <CaseStudiesSample />s{/* CTA Section */}
+      <CaseStudiesSample />{/* CTA Section */}
       <ReadyToScaleCta />
     </main>
   );
