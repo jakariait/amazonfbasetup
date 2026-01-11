@@ -122,7 +122,7 @@ export default function Header() {
 
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden lg:flex items-center">
           {menuItems.map((item, idx) => (
             <div key={idx} className="relative">
               {item.subItems ? (
@@ -194,7 +194,7 @@ export default function Header() {
         </div>
 
         {/* Mobile Hamburger */}
-        <div className="flex md:hidden">
+        <div className="flex lg:hidden">
           <button
             onClick={() => setDrawerOpen(true)}
             aria-label="Open menu"
@@ -219,14 +219,14 @@ export default function Header() {
         {/* Mobile Drawer Overlay */}
         {drawerOpen && (
           <div
-            className="fixed inset-0 bg-opacity-50 z-40 md:hidden"
+            className="fixed inset-0 bg-opacity-50 z-40 lg:hidden"
             onClick={() => setDrawerOpen(false)}
           />
         )}
 
         {/* Mobile Drawer */}
         <div
-          className={`mobile-drawer fixed top-0 right-0 h-full w-72 bg-white shadow text-black z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+          className={`mobile-drawer fixed top-0 right-0 h-full w-72 bg-white shadow text-black z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
             drawerOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
