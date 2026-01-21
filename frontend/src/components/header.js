@@ -108,7 +108,7 @@ export default function Header() {
 
   return (
     <nav className=" border-b border-gray-200 px-4 sticky top-0 z-50 bg-white ">
-      <div className="xl:container xl:mx-auto flex justify-between items-center">
+      <div className="xl:container xl:mx-auto flex justify-between py-3 items-center">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="flex-col items-center justify-center gap-4">

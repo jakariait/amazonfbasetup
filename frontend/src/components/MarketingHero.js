@@ -48,7 +48,7 @@ export default function MarketingHero() {
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/20 border border-orange-500/30 rounded-full text-orange-700 text-sm font-medium backdrop-blur-sm">
             <Zap className="w-4 h-4 mr-2" />
-            #1 Amazon Growth Partner
+            #1 Your E-com Growth Partner
           </div>
 
           {/* Main Headline */}
@@ -78,10 +78,7 @@ export default function MarketingHero() {
                     : "translate-y-4 opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
-
-                onClick={() =>
-                  handleClick(service.name, service.link)
-                }
+                onClick={() => handleClick(service.name, service.link)}
               >
                 {service.name}
               </Link>
