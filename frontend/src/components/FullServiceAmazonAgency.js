@@ -303,10 +303,7 @@ export default function FullServiceAmazonAgency() {
             Success Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            From account setup to million-dollar sales, we&apos;re the only
-            Amazon agency you&apos;ll ever need. Our comprehensive services
-            handle every aspect of your Amazon business so you can focus on what
-            you do best.
+            Tess Core LLC operates as a professional Amazon service provider and manages multiple Seller Central accounts for brands as part of our account management, advertising, and compliance services. All access is granted directly by sellers through Amazon’s official user permissions system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

@@ -55,10 +55,11 @@ export default function AboutUs() {
             Not Just Traffic
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Your success is our obsession. We&apos;re a team of data-driven
-            digital marketing specialists who focus exclusively on one thing:
-            maximizing your return on investment through proven strategies in
-            Amazon FBA.
+            Tess Core LLC is an Amazon-focused eCommerce service provider
+            specializing in Amazon Seller Central operations.
+            <br /> We work as an authorized service agency, managing and
+            supporting multiple Amazon Seller Central accounts on behalf of
+            brands under client authorization.
           </p>
         </div>
       </section>
