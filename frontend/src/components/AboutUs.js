@@ -6,35 +6,32 @@ import ReadyToScaleCta from "@/components/ReadyToScaleCTA";
 import StatsAll from "@/components/StatsAll";
 
 export default function AboutUs() {
-
-
-
-
-
   const team = [
     {
-      name: "Tonmoy",
+      name: "Edris Ahmed Tonmoy",
       role: "CEO & E-commerce Specialist",
       image: "/tonmoy.jpeg",
       expertise:
         "Hi, I'm Tonmoy, leading a team in amazon and digital marketing for bigger scale. We focus on boosting online sales and brand visibility. With smart strategies and a dedicated team, we're all about delivering results and staying ahead in the digital game.",
     },
     {
-      name: "Sohan",
+      name: "MD Sohanur Rahaman",
       role: "Researcher & Advertisement Specialist",
       image: "/sohan.jpeg",
       expertise:
         "I help brands grow on Amazon with data-driven product research, SEO-optimized listings, and high-converting PPC campaigns. From finding winning products to scaling sales with targeted ads, I provide end-to-end solutions that drive real results.",
     },
     {
-      name: "Sakib",
-      role: "Amazon Specialist",
+      name: "MD Shahriar Sakib",
+      role:
+        "Authorised Representatives / Owner\n" +
+        "Amazon E-Commerce Specialist\n",
       image: "/sakib.jpeg",
       expertise:
         "This is Sakib, an Amazon Specialist with 7 years of experience in FBA/FBM, product listing optimization, PPC advertising, store management, and Amazon business setup. I helps brands launch, manage, and expand their businesses on Amazon through tailored strategies that drive growth and long-term success.",
     },
     {
-      name: "Emon",
+      name: "MD Mahfuzur Rahman",
       role: "Meta Ads Specialist",
       image: "/emon.jpeg",
       expertise:

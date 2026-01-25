@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Mail, Phone, CheckCircle } from "lucide-react";
+import { Mail, Phone, CheckCircle, MapPin } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import { getCalendlyLink, getWhatsApp } from "@/utils/brand";
 import { gtmPushEvent } from "@/utils/gtm";
@@ -50,13 +50,8 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-lg">Email Us</h4>
                     <p className="text-orange-100">
-                      <a href="mailto:hello@amazonfbasetup.com">
-                        hello@amazonfbasetup.com
-                      </a>
-                    </p>
-                    <p className="text-orange-100">
-                      <a href="mailto:support@amazonfbasetup.com">
-                        support@amazonfbasetup.com
+                      <a href="mailto:support@tesscore.com">
+                        support@tesscore.com
                       </a>
                     </p>
                   </div>
@@ -74,6 +69,23 @@ const ContactSection = () => {
                     </p>
                   </div>
                 </div>
+
+
+                {/* Address */}
+                <div className="flex items-center space-x-4">
+                  <div className="bg-white bg-opacity-20 p-3 rounded-lg">
+                    <MapPin className="w-6 h-6 text-orange-500" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-lg">Our Address</h4>
+                    <p className="text-orange-100">
+                      123 Main Street, Springfield, IL 62701, USA
+                    </p>
+                  </div>
+                </div>
+
+
+
               </div>
             </div>
 
