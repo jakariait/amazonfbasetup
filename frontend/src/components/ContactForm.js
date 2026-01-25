@@ -10,20 +10,11 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
-    service: "",
+    service: "amazon-fba",
     message: "",
   });
 
   const [successMsg, setSuccessMsg] = useState("");
-
-  const services = [
-    { value: "", label: "Select a Service" },
-    { value: "amazon-fba", label: "Amazon FBA" },
-    { value: "shopify", label: "Shopify" },
-    { value: "meta-ads", label: "Meta Ads" },
-    { value: "problem-solving", label: "Problem Solving" },
-    { value: "other", label: "Other" },
-  ];
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -60,7 +51,7 @@ const ContactForm = () => {
           fullName: formData.name,
           email: formData.email,
           phone: formData.phone,
-          service: formData.service,
+          service: "amazon-fba",
           message: formData.message,
         });
 
@@ -70,7 +61,6 @@ const ContactForm = () => {
           name: "",
           email: "",
           phone: "",
-          service: "",
           message: "",
         });
 
@@ -133,26 +123,6 @@ const ContactForm = () => {
             className="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none transition-colors text-black"
             placeholder="Enter your phone number"
           />
-        </div>
-
-        {/* Service Dropdown */}
-        <div>
-          <label className="block text-orange-500 font-semibold mb-2">
-            Service Interested In *
-          </label>
-          <select
-            name="service"
-            required
-            value={formData.service}
-            onChange={handleInputChange}
-            className="w-full px-4 py-3 bg-white border-2 border-gray-300 rounded-lg focus:border-orange-500 focus:outline-none transition-colors text-black"
-          >
-            {services.map((service) => (
-              <option key={service.value} value={service.value}>
-                {service.label}
-              </option>
-            ))}
-          </select>
         </div>
 
         {/* Message Field */}

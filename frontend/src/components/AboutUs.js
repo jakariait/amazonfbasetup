@@ -64,7 +64,7 @@ export default function AboutUs() {
       </section>
       {/* Team Section */}
       <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto ">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
               Meet TESS Team
@@ -75,7 +75,7 @@ export default function AboutUs() {
               in driving measurable growth
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 items-center justify-center gap-8">
             {team.map((member, index) => (
               <div key={index} className="text-center group">
                 <div className="w-32 h-32 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden mx-auto">
