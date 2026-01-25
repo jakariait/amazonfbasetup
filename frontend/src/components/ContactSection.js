@@ -70,7 +70,6 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-
                 {/* Address */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-white bg-opacity-20 p-3 rounded-lg">
@@ -79,13 +78,10 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-lg">Our Address</h4>
                     <p className="text-orange-100">
-                      123 Main Street, Springfield, IL 62701, USA
+                      1012 Marquez Place Ste 106-B Santa Fe, NM 87505
                     </p>
                   </div>
                 </div>
-
-
-
               </div>
             </div>
 

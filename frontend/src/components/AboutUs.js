@@ -8,8 +8,15 @@ import StatsAll from "@/components/StatsAll";
 export default function AboutUs() {
   const team = [
     {
+      name: "MD Shahriar Sakib",
+      role: "Authorised Representatives / Owner<br />Amazon E-Commerce Specialist",
+      image: "/sakib.jpeg",
+      expertise:
+        "This is Sakib, an Amazon Specialist with 7 years of experience in FBA/FBM, product listing optimization, PPC advertising, store management, and Amazon business setup. I helps brands launch, manage, and expand their businesses on Amazon through tailored strategies that drive growth and long-term success.",
+    },
+    {
       name: "Edris Ahmed Tonmoy",
-      role: "CEO & E-commerce Specialist",
+      role: "E-commerce Specialist",
       image: "/tonmoy.jpeg",
       expertise:
         "Hi, I'm Tonmoy, leading a team in amazon and digital marketing for bigger scale. We focus on boosting online sales and brand visibility. With smart strategies and a dedicated team, we're all about delivering results and staying ahead in the digital game.",
@@ -21,15 +28,7 @@ export default function AboutUs() {
       expertise:
         "I help brands grow on Amazon with data-driven product research, SEO-optimized listings, and high-converting PPC campaigns. From finding winning products to scaling sales with targeted ads, I provide end-to-end solutions that drive real results.",
     },
-    {
-      name: "MD Shahriar Sakib",
-      role:
-        "Authorised Representatives / Owner\n" +
-        "Amazon E-Commerce Specialist\n",
-      image: "/sakib.jpeg",
-      expertise:
-        "This is Sakib, an Amazon Specialist with 7 years of experience in FBA/FBM, product listing optimization, PPC advertising, store management, and Amazon business setup. I helps brands launch, manage, and expand their businesses on Amazon through tailored strategies that drive growth and long-term success.",
-    },
+
     {
       name: "MD Mahfuzur Rahman",
       role: "Meta Ads Specialist",
@@ -87,12 +86,15 @@ export default function AboutUs() {
                   />
                 </div>
 
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                <h3 className="text-2xl whitespace-pre-line font-bold mb-2 text-gray-900">
                   {member.name}
                 </h3>
-                <div className="text-orange-500 font-medium mb-4">
-                  {member.role}
-                </div>
+
+                <div
+                  className="text-orange-500 font-medium mb-4"
+                  dangerouslySetInnerHTML={{ __html: member.role }}
+                />
+
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {member.expertise}
                 </p>

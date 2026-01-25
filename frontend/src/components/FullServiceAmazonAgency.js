@@ -1,5 +1,5 @@
 "use client";
-import React, {useEffect} from "react";
+import React from "react";
 import {
   ShoppingCart,
   Package,
@@ -15,15 +15,13 @@ import {
   CheckCircle,
   Calendar,
   ExternalLink,
+  BriefcaseBusiness,
 } from "lucide-react";
 import { getCalendlyLink } from "@/utils/brand";
 import Link from "next/link";
 import { gtmPushEvent } from "@/utils/gtm";
 
 export default function FullServiceAmazonAgency() {
-
-
-
   const handleClick = (buttonName, destination) => {
     gtmPushEvent("button_click", {
       buttonName,
@@ -100,7 +98,7 @@ export default function FullServiceAmazonAgency() {
         },
         {
           name: "Product Photography",
-          description: "Professional images that drive conversions",
+          description: "Amazon-Compliant Product Images",
         },
       ],
     },
@@ -189,6 +187,32 @@ export default function FullServiceAmazonAgency() {
         {
           name: "Seasonal Campaign Planning",
           description: "Maximize holiday and peak season sales",
+        },
+      ],
+    },
+    {
+      category: "Policy Compliance & Account Health Support",
+      icon: BriefcaseBusiness,
+      services: [
+        {
+          name: "Amazon Policy Compliance",
+          description:
+            "Guidance to help sellers understand and follow Amazon policies and best practices.",
+        },
+        {
+          name: "Account Health Monitoring",
+          description:
+            "Ongoing review of account health metrics and performance notifications.",
+        },
+        {
+          name: "Seller Central Issue Support",
+          description:
+            "Assistance with policy warnings, listing issues, and documentation preparation.",
+        },
+        {
+          name: "Account Reinstatement Support",
+          description:
+            "Support with suspended or restricted accounts in accordance with Amazon guidelines.",
         },
       ],
     },
@@ -303,7 +327,11 @@ export default function FullServiceAmazonAgency() {
             Success Partner
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
-            Tess Core LLC operates as a professional Amazon service provider and manages multiple Seller Central accounts for brands as part of our account management, advertising, and compliance services. All access is granted directly by sellers through Amazon’s official user permissions system.
+            Tess Core LLC operates as a professional Amazon service provider and
+            manages multiple Seller Central accounts for brands as part of our
+            account management, advertising, and compliance services. All access
+            is granted directly by sellers through Amazon’s official user
+            permissions system.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -374,7 +402,7 @@ export default function FullServiceAmazonAgency() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {fullServices.map((category, index) => {
               const IconComponent = category.icon;
               return (
@@ -382,11 +410,11 @@ export default function FullServiceAmazonAgency() {
                   key={index}
                   className="bg-white rounded-xl p-6 border border-gray-200 hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg"
                 >
-                  <div className="flex items-center mb-6">
-                    <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mr-4">
+                  <div className="grid grid-cols-5 mb-6 items-center justify-center">
+                    <div className="col-span-1 w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mr-4">
                       <IconComponent className="w-6 h-6 text-orange-500" />
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900">
+                    <h3 className="col-span-4 text-xl font-bold text-gray-900">
                       {category.category}
                     </h3>
                   </div>
