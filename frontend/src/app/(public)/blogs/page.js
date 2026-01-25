@@ -45,7 +45,7 @@ export default async function BlogsPage({ searchParams }) {
     }
 
     return (
-      <div className="xl:container xl:mx-auto  p-6">
+      <div className="xl:container xl:mx-auto min-h-screen p-6">
         <h1 className="text-3xl font-bold mb-6 text-center">Active Blogs</h1>
 
         <div className="grid  md:grid-cols-3  gap-6 mb-6">

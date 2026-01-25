@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { BarChart3, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { caseStudies } from "@/utils/caseStudies";
 
 const CaseStudiesSample = () => {
@@ -154,39 +154,6 @@ const CaseStudiesSample = () => {
           })}
         </div>
       </section>
-      {/*/!* Testimonial *!/*/}
-      {/*<section className="py-16 px-4 bg-gray-50">*/}
-      {/*  <div className="max-w-4xl mx-auto">*/}
-      {/*    {caseStudies.map((study, index) => {*/}
-      {/*      if (index !== activeCase) return null;*/}
-
-      {/*      return (*/}
-      {/*        <div*/}
-      {/*          key={index}*/}
-      {/*          className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200 text-center"*/}
-      {/*        >*/}
-      {/*          <div className="text-2xl text-orange-500 font-bold mb-4">*/}
-      {/*            &quot;*/}
-      {/*          </div>*/}
-      {/*          <blockquote className="text-xl text-gray-700 leading-relaxed mb-6 italic">*/}
-      {/*            {study.testimonial.quote}*/}
-      {/*          </blockquote>*/}
-      {/*          <div className="flex items-center justify-center">*/}
-      {/*            <div className="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>*/}
-      {/*            <div className="text-left">*/}
-      {/*              <div className="font-bold text-gray-900">*/}
-      {/*                {study.testimonial.author}*/}
-      {/*              </div>*/}
-      {/*              <div className="text-gray-600 text-sm">*/}
-      {/*                {study.testimonial.position}*/}
-      {/*              </div>*/}
-      {/*            </div>*/}
-      {/*          </div>*/}
-      {/*        </div>*/}
-      {/*      );*/}
-      {/*    })}*/}
-      {/*  </div>*/}
-      {/*</section>*/}
     </div>
   );
 };

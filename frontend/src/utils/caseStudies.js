@@ -42,98 +42,98 @@ export  const caseStudies = [
       position: "Founder & CEO",
     },
   },
-  {
-    id: 2,
-    client: "Urban Style Co.",
-    // industry: "Fashion & Apparel",
-    service: "Shopify",
-    icon: Store,
-    timeline: "4 months",
-    challenge:
-      "Outdated Shopify store with poor mobile experience and low conversion rates",
-    solution:
-      "Complete store redesign with mobile-first approach, conversion optimization, and checkout improvements",
-    image: "/api/placeholder/600/400",
-    results: {
-      revenue: "+320%",
-      conversion: "+156%",
-      mobile: "+89%",
-      speed: "3.2s load time",
-    },
-    metrics: [
-      {
-        label: "Monthly Revenue",
-        before: "$28,400",
-        after: "$119,280",
-        change: "+320%",
-      },
-      {
-        label: "Conversion Rate",
-        before: "1.8%",
-        after: "4.6%",
-        change: "+156%",
-      },
-      {
-        label: "Mobile Conversion",
-        before: "0.9%",
-        after: "1.7%",
-        change: "+89%",
-      },
-      {
-        label: "Page Load Speed",
-        before: "8.4s",
-        after: "3.2s",
-        change: "-62%",
-      },
-    ],
-    testimonial: {
-      quote:
-        "Our new Shopify store is a game-changer. The mobile experience is fantastic and our sales have tripled. Best investment we&apos;ve made.",
-      author: "Marcus Chen",
-      position: "E-commerce Director",
-    },
-  },
-  {
-    id: 3,
-    client: "GreenHome Solutions",
-    // industry: "Home & Garden",
-    service: "Meta Ads",
-    icon: Share2,
-    timeline: "3 months",
-    challenge:
-      "High cost per acquisition and poor ROAS from Facebook and Instagram advertising",
-    solution:
-      "Complete Meta Ads restructure with audience segmentation, creative optimization, and funnel improvements",
-    image: "/api/placeholder/600/400",
-    results: {
-      roas: "8.4x",
-      cpa: "-73%",
-      reach: "+245%",
-      leads: "+389%",
-    },
-    metrics: [
-      { label: "ROAS", before: "2.1x", after: "8.4x", change: "+300%" },
-      {
-        label: "Cost Per Acquisition",
-        before: "$127",
-        after: "$34",
-        change: "-73%",
-      },
-      { label: "Monthly Leads", before: "89", after: "435", change: "+389%" },
-      {
-        label: "Ad Spend Efficiency",
-        before: "47%",
-        after: "84%",
-        change: "+79%",
-      },
-    ],
-    testimonial: {
-      quote:
-        "We were skeptical about Meta Ads, but these results are beyond our expectations. Our lead quality has improved dramatically while costs dropped.",
-      author: "Jennifer Rodriguez",
-      position: "Marketing Manager",
-    },
-  },
+  // {
+  //   id: 2,
+  //   client: "Urban Style Co.",
+  //   // industry: "Fashion & Apparel",
+  //   service: "Shopify",
+  //   icon: Store,
+  //   timeline: "4 months",
+  //   challenge:
+  //     "Outdated Shopify store with poor mobile experience and low conversion rates",
+  //   solution:
+  //     "Complete store redesign with mobile-first approach, conversion optimization, and checkout improvements",
+  //   image: "/api/placeholder/600/400",
+  //   results: {
+  //     revenue: "+320%",
+  //     conversion: "+156%",
+  //     mobile: "+89%",
+  //     speed: "3.2s load time",
+  //   },
+  //   metrics: [
+  //     {
+  //       label: "Monthly Revenue",
+  //       before: "$28,400",
+  //       after: "$119,280",
+  //       change: "+320%",
+  //     },
+  //     {
+  //       label: "Conversion Rate",
+  //       before: "1.8%",
+  //       after: "4.6%",
+  //       change: "+156%",
+  //     },
+  //     {
+  //       label: "Mobile Conversion",
+  //       before: "0.9%",
+  //       after: "1.7%",
+  //       change: "+89%",
+  //     },
+  //     {
+  //       label: "Page Load Speed",
+  //       before: "8.4s",
+  //       after: "3.2s",
+  //       change: "-62%",
+  //     },
+  //   ],
+  //   testimonial: {
+  //     quote:
+  //       "Our new Shopify store is a game-changer. The mobile experience is fantastic and our sales have tripled. Best investment we&apos;ve made.",
+  //     author: "Marcus Chen",
+  //     position: "E-commerce Director",
+  //   },
+  // },
+  // {
+  //   id: 3,
+  //   client: "GreenHome Solutions",
+  //   // industry: "Home & Garden",
+  //   service: "Meta Ads",
+  //   icon: Share2,
+  //   timeline: "3 months",
+  //   challenge:
+  //     "High cost per acquisition and poor ROAS from Facebook and Instagram advertising",
+  //   solution:
+  //     "Complete Meta Ads restructure with audience segmentation, creative optimization, and funnel improvements",
+  //   image: "/api/placeholder/600/400",
+  //   results: {
+  //     roas: "8.4x",
+  //     cpa: "-73%",
+  //     reach: "+245%",
+  //     leads: "+389%",
+  //   },
+  //   metrics: [
+  //     { label: "ROAS", before: "2.1x", after: "8.4x", change: "+300%" },
+  //     {
+  //       label: "Cost Per Acquisition",
+  //       before: "$127",
+  //       after: "$34",
+  //       change: "-73%",
+  //     },
+  //     { label: "Monthly Leads", before: "89", after: "435", change: "+389%" },
+  //     {
+  //       label: "Ad Spend Efficiency",
+  //       before: "47%",
+  //       after: "84%",
+  //       change: "+79%",
+  //     },
+  //   ],
+  //   testimonial: {
+  //     quote:
+  //       "We were skeptical about Meta Ads, but these results are beyond our expectations. Our lead quality has improved dramatically while costs dropped.",
+  //     author: "Jennifer Rodriguez",
+  //     position: "Marketing Manager",
+  //   },
+  // },
 ];
 
 export const caseStudyPreviews = [
@@ -143,30 +143,30 @@ export const caseStudyPreviews = [
     growth: "+540% Revenue",
     service: "Multi-Channel",
   },
-  {
-    title: "SaaS Lead Generation",
-    industry: "Technology",
-    growth: "+325% Leads",
-    service: "Meta Ads",
-  },
+  // {
+  //   title: "SaaS Lead Generation",
+  //   industry: "Technology",
+  //   growth: "+325% Leads",
+  //   service: "Meta Ads",
+  // },
   {
     title: "Amazon Dominance",
     industry: "Consumer Goods",
     growth: "+890% Sales",
     service: "Amazon FBA",
   },
-  {
-    title: "Shopify Optimization",
-    industry: "Beauty",
-    growth: "+267% Conversion",
-    service: "Shopify",
-  },
-  {
-    title: "Brand Awareness Campaign",
-    industry: "Healthcare",
-    growth: "+445% Reach",
-    service: "Meta Ads",
-  },
+  // {
+  //   title: "Shopify Optimization",
+  //   industry: "Beauty",
+  //   growth: "+267% Conversion",
+  //   service: "Shopify",
+  // },
+  // {
+  //   title: "Brand Awareness Campaign",
+  //   industry: "Healthcare",
+  //   growth: "+445% Reach",
+  //   service: "Meta Ads",
+  // },
   {
     title: "International Expansion",
     industry: "Electronics",

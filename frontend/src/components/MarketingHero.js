@@ -18,8 +18,8 @@ export default function MarketingHero() {
 
   const services = [
     { name: "Amazon Brand Building", link: "/amazon" },
-    { name: "Shopify Optimization", link: "/shopify" },
-    { name: "Meta Ads Management", link: "/meta" },
+    // { name: "Shopify Optimization", link: "/shopify" },
+    // { name: "Meta Ads Management", link: "/meta" },
   ];
 
   useEffect(() => {
@@ -60,14 +60,15 @@ export default function MarketingHero() {
               </span>
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed max-w-lg">
-              Transform your brand with our expertise in Amazon optimization,
-              Shopify development, and Meta advertising that drives real
-              results.
+              Transform your brand with our expertise in Amazon Seller Central
+              account management, Amazon PPC optimization, listing optimization,
+              FBA operations, and compliance support — built to drive
+              sustainable growth on Amazon.
             </p>
           </div>
 
           {/* Service Tags */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex items-center justify-center flex-wrap gap-3">
             {services.map((service, index) => (
               <Link
                 key={service.name}

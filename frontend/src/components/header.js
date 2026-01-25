@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import {getBrandLogo, getBrandName, getSlogan} from "@/utils/brand";
+import { getBrandLogo, getBrandName, getSlogan } from "@/utils/brand";
 
 const menuItems = [
   {
@@ -14,13 +14,13 @@ const menuItems = [
     path: "/about-us",
   },
   {
-    name: "Services",
-    path: "services",
-    subItems: [
-      { name: "Amazon", path: "/amazon" },
-      { name: "Shopify", path: "/shopify" },
-      { name: "Meta", path: "/meta" },
-    ],
+    name: "Amazon",
+    path: "/amazon",
+    // subItems: [
+    //   { name: "Amazon", path: "/amazon" },
+    //   { name: "Shopify", path: "/shopify" },
+    //   { name: "Meta", path: "/meta" },
+    // ],
   },
   { name: "Success Story", path: "/success-story" },
   { name: "FAQs", path: "/faqs" },
@@ -109,17 +109,16 @@ export default function Header() {
   return (
     <nav className=" border-b border-gray-200 px-4 sticky top-0 z-50 bg-white ">
       <div className="xl:container xl:mx-auto flex justify-between py-3 items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <div className="flex-col items-center justify-center gap-4">
-              <img
-                src={getBrandLogo()}
-                alt={getBrandName()}
-                className="w-40   cursor-pointer hover:opacity-90 transition-opacity duration-200"
-              />
-            </div>
-          </Link>
-
+        {/* Logo */}
+        <Link href="/" className="flex items-center">
+          <div className="flex-col items-center justify-center gap-4">
+            <img
+              src={getBrandLogo()}
+              alt={getBrandName()}
+              className="w-40   cursor-pointer hover:opacity-90 transition-opacity duration-200"
+            />
+          </div>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center">

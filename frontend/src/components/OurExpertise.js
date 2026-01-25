@@ -10,28 +10,33 @@ const services = [
     description:
       "Complete Amazon optimization from product research to PPC campaigns that drive profitable sales.",
   },
-  {
-    icon: Store,
-    title: "Shopify Development",
-    href: "/shopify",
-    description:
-      "Custom Shopify stores designed for conversion with seamless user experiences and mobile optimization.",
-  },
-  {
-    icon: Share2,
-    title: "Meta Ads",
-    href: "/meta",
-    description:
-      "Data-driven Facebook and Instagram advertising campaigns that maximize your ad spend ROI.",
-  },
+  // {
+  //   icon: Store,
+  //   title: "Shopify Development",
+  //   href: "/shopify",
+  //   description:
+  //     "Custom Shopify stores designed for conversion with seamless user experiences and mobile optimization.",
+  // },
+  // {
+  //   icon: Share2,
+  //   title: "Meta Ads",
+  //   href: "/meta",
+  //   description:
+  //     "Data-driven Facebook and Instagram advertising campaigns that maximize your ad spend ROI.",
+  // },
 ];
 
 const ServicesSection = () => {
   return (
     <section className="py-20 px-6 md:px-12 bg-gray-50 border-b border-t border-gray-200">
       <div className="max-w-7xl mx-auto ">
-        <h2 className="text-4xl font-bold mb-12 text-gray-900 text-center">Our Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 items-stretch">
+        <h2 className="text-4xl font-bold mb-12 text-gray-900 text-center">
+          Our Services
+        </h2>
+        <div
+          className="flex max-w-md mx-auto items-center justify-center
+        "
+        >
           {services.map((service, index) => {
             const IconComponent = service.icon;
             return (

@@ -58,7 +58,7 @@ export default function AboutUs() {
             Your success is our obsession. We&apos;re a team of data-driven
             digital marketing specialists who focus exclusively on one thing:
             maximizing your return on investment through proven strategies in
-            Amazon FBA, Shopify, and Meta Ads.
+            Amazon FBA.
           </p>
         </div>
       </section>
@@ -124,8 +124,7 @@ export default function AboutUs() {
               into a comprehensive digital marketing powerhouse. We&apos;ve
               helped over 500 businesses transform their online presence,
               generating more than $50 million in additional revenue through our
-              strategic approach to Amazon optimization, Shopify development,
-              and Meta advertising.
+              strategic approach to Amazon optimization.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed">
               Today, we&apos;re proud to be the agency that business owners
