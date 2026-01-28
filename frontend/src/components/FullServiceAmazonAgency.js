@@ -32,16 +32,16 @@ export default function FullServiceAmazonAgency() {
 
   const agencyStats = [
     {
-      metric: "Clients Served",
+      metric: "Clients Supported",
       value: "500+",
       icon: Users,
       description: "Successful partnerships",
     },
     {
-      metric: "Revenue Generated",
+      metric: "Revenue Across Managed Accounts",
       value: "$50M+",
       icon: TrendingUp,
-      description: "Total client revenue",
+      description: "Historical client data",
     },
     {
       metric: "Years Experience",
@@ -51,7 +51,7 @@ export default function FullServiceAmazonAgency() {
     },
     {
       metric: "Success Rate",
-      value: "96%",
+      value: "High",
       icon: Target,
       description: "Client satisfaction",
     },
@@ -281,7 +281,7 @@ export default function FullServiceAmazonAgency() {
         "Listing creation",
         "Launch strategy",
       ],
-      results: "Average 6-month revenue: $25K+",
+      results: "Example outcomes from select client launches",
     },
     {
       type: "Existing Sellers",
@@ -294,7 +294,7 @@ export default function FullServiceAmazonAgency() {
         "Listing enhancement",
         "Scale strategies",
       ],
-      results: "Average growth: +300% revenue",
+      results: "Growth improvement observed in select campaigns",
     },
     {
       type: "Enterprise Brands",
@@ -307,7 +307,7 @@ export default function FullServiceAmazonAgency() {
         "Advanced analytics",
         "Team integration",
       ],
-      results: "Average portfolio: $1M+ revenue",
+      results: "Experiences supporting high-volume Amazon accounts",
     },
   ];
 
@@ -357,13 +357,14 @@ export default function FullServiceAmazonAgency() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4 text-gray-900">
-              Trusted by Amazon Sellers Worldwide
+              Supporting Amazon Sellers Worldwide
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our track record speaks for itself. We&apos;ve helped hundreds of
-              businesses succeed on Amazon.
+              Based on historical client engagements across multiple Amazon
+              marketplaces.
             </p>
           </div>
+
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {agencyStats.map((stat, index) => {
               const IconComponent = stat.icon;
@@ -385,6 +386,14 @@ export default function FullServiceAmazonAgency() {
               );
             })}
           </div>
+        </div>
+
+        <div className="text-gray-600 max-w-2xl mx-auto pt-10">
+          <p>
+            All figures shown are based on historical client engagements.
+            Results vary depending on business model, category, and market
+            conditions. No outcomes are guaranteed.
+          </p>
         </div>
       </section>
 
@@ -442,16 +451,17 @@ export default function FullServiceAmazonAgency() {
       </section>
 
       {/* Client Types */}
-      <section className="py-20 px-4">
+      <section className="py-10 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              We Serve Every Type of Amazon Business
+              Supporting Amazon Sellers at Different Stages
             </h2>
             <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Whether you&apos;re just starting or managing a multi-million
-              dollar Amazon business, we have the expertise to help you succeed.
+              dollar Amazon business, we provide tailored support based on
+              business stage and needs.
             </p>
           </div>
 
@@ -490,6 +500,12 @@ export default function FullServiceAmazonAgency() {
               );
             })}
           </div>
+
+          <p className="text-gray-600 text-md pt-10 max-w-2xl mx-auto text-center">
+            Examples shown are based on historical client engagements. Results
+            vary depending on category, strategy, and market conditions. No
+            outcomes are guaranteed.
+          </p>
         </div>
       </section>
 
