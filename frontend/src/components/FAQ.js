@@ -1,14 +1,12 @@
-"use client"
+"use client";
 import React from "react";
 import { HelpCircle, MessageCircle, Clock } from "lucide-react";
 import { getCalendlyLink } from "@/utils/brand";
 import Link from "next/link";
 import UserFAQ from "@/components/UserFAQ";
-import {gtmPushEvent} from "@/utils/gtm";
+import { gtmPushEvent } from "@/utils/gtm";
 
 export default function FAQ() {
-
-
   const handleClick = (buttonName, destination) => {
     gtmPushEvent("button_click", {
       buttonName,
@@ -42,6 +40,18 @@ export default function FAQ() {
 
       <UserFAQ />
 
+      <section className="mt-10 pb-10 border-t border-gray-200 pt-6 max-w-3xl mx-auto">
+        <h4 className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-700">
+          General Disclaimer
+        </h4>
+        <p className="text-sm leading-relaxed text-gray-600">
+          All services, case studies, and examples referenced are based on
+          previous client engagements and real-world implementations. Results
+          may vary depending on factors such as business model, product
+          category, competition, and market conditions. No specific outcomes,
+          performance metrics, or results are guaranteed.
+        </p>
+      </section>
       {/* Still Have Questions Section */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center">
@@ -67,19 +77,17 @@ export default function FAQ() {
                   onClick={() =>
                     handleClick("Schedule Free Consultation", getCalendlyLink())
                   }
-                  className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer">
+                  className="px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer"
+                >
                   Schedule Free Consultation
                 </button>
               </a>
 
               <Link href="/contact-us">
                 <button
-
-                  onClick={() =>
-                    handleClick("Contact Support", "/contact-us")
-                  }
-
-                  className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer">
+                  onClick={() => handleClick("Contact Support", "/contact-us")}
+                  className="px-8 py-4 border-2 border-orange-500 text-orange-500 font-bold rounded-lg hover:bg-orange-500 hover:text-white transition-all transform hover:scale-105 cursor-pointer"
+                >
                   Contact Support
                 </button>
               </Link>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import {
@@ -41,7 +41,26 @@ const UserFAQ = () => {
       ) : (
         <div className="grid  gap-6 max-w-3xl mx-auto">
           {faqs.map((faq) => (
-            <Accordion key={faq._id}>
+            <Accordion
+              key={faq._id}
+              sx={{
+                boxShadow: "none",
+                border: "1px solid #e5e7eb",
+                borderRadius: "12px",
+                overflow: "hidden",
+                "&:before": { display: "none" },
+
+                // fix first accordion radius
+                "&:first-of-type": {
+                  borderTopLeftRadius: "12px",
+                  borderTopRightRadius: "12px",
+                },
+                "&:last-of-type": {
+                  borderBottomLeftRadius: "12px",
+                  borderBottomRightRadius: "12px",
+                },
+              }}
+            >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls={`panel-${faq._id}`}
