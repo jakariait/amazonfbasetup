@@ -141,6 +141,16 @@ export default function MarketingHero() {
       </div>
 
       <StatsAll />
+
+      <div
+        className={"max-w-4xl text-center mx-auto py-5 text-md text-gray-900"}
+      >
+        <p>
+          Metrics shown are based on historical client case studies. Results
+          vary by brand, category, and market conditions.
+        </p>
+        <p>No specific outcomes are guaranteed.</p>
+      </div>
     </div>
   );
 }

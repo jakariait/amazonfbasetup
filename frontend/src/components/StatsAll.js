@@ -1,15 +1,29 @@
-import React from 'react';
-import {Award, Target, TrendingUp, Users} from "lucide-react";
+import React from "react";
+import { Award, Target, TrendingUp, Users } from "lucide-react";
 
 const StatsAll = () => {
   const stats = [
-    { number: "500+", label: "Clients Served", icon: Users },
-    { number: "300%", label: "Average ROI Increase", icon: TrendingUp },
-    { number: "20M+", label: "Revenue Generated", icon: Target },
+    { number: "500+", label: "Clients Supported", icon: Users },
+    { number: "300%", label: "ROI in Client Campaigns", icon: TrendingUp },
+    { number: "50M+", label: "Revenue Across Managed Accounts", icon: Target },
     { number: "8+", label: "Years Experience", icon: Award },
   ];
   return (
-    <section className="py-16 px-4">
+    <section className=" px-4">
+      <div
+        className={
+          "max-w-2xl mx-auto py-5 flex flex-col gap-4 item-center justify-center text-center"
+        }
+      >
+        <h1 className={"text-3xl font-bold"}>
+          Supporting Amazon Sellers Worldwide
+        </h1>
+        <h2 className={"text-md text-gray-600"}>
+          Based on historical client engagements across multiple Amazon
+          marketplaces
+        </h2>
+      </div>
+
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => {

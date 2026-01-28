@@ -126,7 +126,7 @@ const CaseStudiesSample = () => {
                     {/* Detailed Metrics */}
                     <div className="space-y-4">
                       <h4 className="font-bold text-gray-900 mb-4">
-                        Performance Metrics
+                        Performance Snapshot (Case Study)
                       </h4>
                       {study.metrics.map((metric, idx) => (
                         <div
@@ -153,6 +153,13 @@ const CaseStudiesSample = () => {
             );
           })}
         </div>
+
+        <p className={"max-w-5xl pt-10 mx-auto text-md text-gray-900"}>
+          This case study reflects historical results from a specific client
+          engagement. Performance metrics vary based on product category,
+          pricing, competition, and market conditions. No outcomes are
+          guaranteed.
+        </p>
       </section>
     </div>
   );
