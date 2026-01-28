@@ -114,24 +114,26 @@ export default function AboutUs() {
           </div>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Founded in 2019, our agency was born from a simple frustration:
-              too many businesses were burning money on digital marketing with
-              little to show for it. We set out to change that by creating a
-              results-first approach that treats every dollar of your marketing
-              budget as an investment that must generate measurable returns.
+              Founded in 2019, our agency was built to support brands navigating
+              the complexities of Amazon and digital commerce. We focus on
+              structured, data-driven strategies designed to help businesses
+              better understand and optimize their Amazon operations.
             </p>
+
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              What started as a small team of Amazon FBA specialists has grown
-              into a comprehensive digital marketing powerhouse. We&apos;ve
-              helped over 500 businesses transform their online presence,
-              generating more than $50 million in additional revenue through our
-              strategic approach to Amazon optimization.
+              What began as a small team of Amazon FBA specialists has grown
+              into a full-service eCommerce support team. Over the years, we
+              have worked with hundreds of businesses across multiple
+              categories, contributing to improved visibility, operational
+              efficiency, and performance through Amazon-focused optimization
+              and account management services.
             </p>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              Today, we&apos;re proud to be the agency that business owners
-              trust when they&apos;re serious about growth. We don&apos;t just
-              run campaigns – we become your growth partners, invested in your
-              success because your wins are our wins.
+
+            <p className="text-gray-600 text-lg leading-relaxed mb-6">
+              Today, we work as a long-term service partner for brands seeking
+              structured support and informed decision-making on Amazon. Our
+              role is to provide expertise, execution, and ongoing
+              guidance—aligned with each client’s goals and market conditions.
             </p>
           </div>
         </div>
