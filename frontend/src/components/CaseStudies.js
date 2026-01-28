@@ -16,17 +16,14 @@ export default function CaseStudies() {
         <div className="relative max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full text-orange-500 text-sm font-medium mb-6">
             <BarChart3 className="w-4 h-4 mr-2" />
-            Proven Results & Success Stories
+            Client Case Studies & Outcomes
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-orange-500 bg-clip-text text-transparent">
-            Case Studies That
-            <br />
-            Prove Our Impact
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-orange-500 bg-clip-text text-transparent">
+            Case Studies From Past Client Engagements
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Real businesses, real results. See how we&apos;ve helped companies
-            across different industries achieve remarkable growth through
-            strategic digital marketing.
+            Real business and documented outcomes from past client engagements
+            across different industries
           </p>
         </div>
       </section>
@@ -53,6 +50,11 @@ export default function CaseStudies() {
             })}
           </div>
         </div>
+        <p className="text-md pt-10 text-gray-600 max-w-3xl mx-auto text-center leading-relaxed">
+          Figures shown are based on historical client case studies. Results
+          vary by category, budget, competition, and market conditions. No
+          outcomes are guaranteed.
+        </p>
       </section>
       <BrandsWeWorkWith />
       <ResultsWeGet />
@@ -63,12 +65,11 @@ export default function CaseStudies() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              More Success Stories
+              Additional Client Case Highlights
             </h2>
             <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Explore our complete portfolio of successful campaigns and
-              transformations
+              Examples from selected historical client engagements across different categories
             </p>
           </div>
 

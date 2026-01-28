@@ -59,28 +59,28 @@ export const caseStudyPreviews = [
   {
     title: "E-commerce Scaling",
     industry: "Retail",
-    growth: "+540% Revenue",
+    growth: "Up to +540% Revenue Growth Observed",
     service: "Multi-Channel",
   },
 
   {
     title: "Amazon Dominance",
     industry: "Consumer Goods",
-    growth: "+890% Sales",
+    growth: "Up to +890% Sales Increase Observed",
     service: "Amazon FBA",
   },
 
   {
     title: "International Expansion",
     industry: "Electronics",
-    growth: "+623% Markets",
+    growth: "Up to +623% Market Reach Growth",
     service: "Amazon FBA",
   },
 ];
 
 export const allResults = [
-  { metric: "Average Revenue Increase", value: "367%", icon: TrendingUp },
-  { metric: "Total Revenue Generated", value: "$2.3M+", icon: DollarSign },
-  { metric: "Average ROAS Improvement", value: "450%", icon: Target },
+  { metric: "Revenue Growth Observed", value: "Up to 367%", icon: TrendingUp },
+  { metric: "Revenue Across Documented Case Studies", value: "$2.3M+", icon: DollarSign },
+  { metric: "ROAS Improvement Observed", value: "Up to 450%", icon: Target },
   { metric: "Successful Case Studies", value: "100+", icon: BarChart3 },
 ];
