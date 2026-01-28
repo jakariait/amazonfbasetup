@@ -514,12 +514,11 @@ export default function FullServiceAmazonAgency() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 text-gray-900">
-              Our Proven Success Process
+              Our Amazon Growth Process
             </h2>
             <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              A systematic approach that&apos;s helped hundreds of businesses
-              achieve Amazon success
+              A structured approach refined through work with hundreds of Amazon business
             </p>
           </div>
 
@@ -572,7 +571,7 @@ export default function FullServiceAmazonAgency() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-6 text-gray-900">
-                Why Choose Us as Your Amazon Partner?
+                Why Work With Us as Your Amazon Service Partner?
               </h2>
               <div className="space-y-6">
                 {[
@@ -589,12 +588,12 @@ export default function FullServiceAmazonAgency() {
                   {
                     title: "Transparent Reporting",
                     description:
-                      "Clear, detailed reports showing exactly what we're doing and the results we're achieving.",
+                      "Clear, detailed reports showing the actions taken and performance trends over time.",
                   },
                   {
-                    title: "Proven Track Record",
+                    title: "Established Track Record",
                     description:
-                      "Hundreds of successful clients and millions in revenue generated across all industries.",
+                      "Experience supporting hundreds of Amazon sellers across multiple categories.",
                   },
                   {
                     title: "Future-Proof Strategies",
@@ -620,7 +619,7 @@ export default function FullServiceAmazonAgency() {
             <div className="bg-gradient-to-br from-orange-500/10 to-orange-500/5 rounded-2xl p-8 border border-gray-200">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Ready to Dominate Amazon?
+                  Ready to Improve Your Amazon Performance?
                 </h3>
                 <p className="text-gray-600">
                   Get a comprehensive analysis of your Amazon potential

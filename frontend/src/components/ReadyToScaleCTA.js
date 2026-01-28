@@ -20,9 +20,7 @@ const ReadyToScaleCta = () => {
           Ready to Scale Your Business?
         </h2>
         <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Join hundreds of successful businesses who trust us to maximize their
-          digital marketing ROI. Let&apos;s discuss how we can accelerate your
-          growth.
+          Join hundreds of successful businesses who trust us to improve their digital marketing performance. Let&apos;s discuss how we support your Amazon growth strategy.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={getCalendlyLink()} target="_blank" rel="noopener noreferrer">

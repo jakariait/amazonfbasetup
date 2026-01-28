@@ -8,7 +8,7 @@ const services = [
     title: "Amazon FBA",
     href: "/amazon",
     description:
-      "Complete Amazon optimization from product research to PPC campaigns that drive profitable sales.",
+      "Complete Amazon optimization support, from product research to PPC campaign management aligned with business goals.",
   },
   // {
   //   icon: Store,

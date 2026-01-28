@@ -12,7 +12,7 @@ const CaseStudiesSample = () => {
       {/* Case Study Navigation */}
       <section className="py-12 px-4 bg-gray-50">
         <h2 className="text-4xl font-bold mb-12 text-gray-900 text-center">
-          Proven Strategies, Tangible Outcomes
+          Structured Strategies, Measurable Insights
         </h2>
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row gap-4 justify-center">

@@ -46,19 +46,17 @@ export default function AboutUs() {
         <div className="relative max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center px-4 py-2 bg-orange-500/10 rounded-full text-orange-500 text-sm font-medium mb-6">
             <TrendingUp className="w-4 h-4 mr-2" />
-            ROI-Focused Digital Marketing
+            Amazon-Focused eCommerce Services
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-orange-500 bg-clip-text text-transparent">
-            We Drive Results,
-            <br />
-            Not Just Traffic
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-orange-500 bg-clip-text text-transparent">
+            We Support Amazon Growth Through Strategic Execution
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Tess Core LLC is an Amazon-focused eCommerce service provider
             specializing in Amazon Seller Central operations.
-            <br /> We work as an authorized service agency, managing and
-            supporting multiple Amazon Seller Central accounts on behalf of
-            brands under client authorization.
+            <br /> We operate as a third-party Amazon service provider, managing
+            and supporting Amazon Seller Central accounts on behalf of brands
+            under client authorization.
           </p>
         </div>
       </section>
