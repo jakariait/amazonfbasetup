@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Calendar } from "lucide-react";
 import { caseStudies } from "@/utils/caseStudies";
+import SecuritySection from "@/components/SecuritySection";
 
 const CaseStudiesSample = () => {
   const [activeCase, setActiveCase] = useState(0);
@@ -160,6 +161,10 @@ const CaseStudiesSample = () => {
           pricing, competition, and market conditions. No outcomes are
           guaranteed.
         </p>
+        <div className={"mt-10"}>
+          <SecuritySection />
+
+        </div>
       </section>
     </div>
   );
