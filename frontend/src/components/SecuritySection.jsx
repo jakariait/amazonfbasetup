@@ -15,7 +15,7 @@ export default function SecuritySection() {
     <section className="w-full max-w-6xl mx-auto p-6 md:p-8 bg-white rounded-2xl  border border-gray-200 text-sm">
       {/* Header */}
       <div className="flex items-center gap-3 mb-6">
-        <ShieldCheck className="w-7 h-7 text-green-100" />
+        <ShieldCheck className="w-7 h-7 text-green-600" />
         <h2 className="text-xl font-semibold text-gray-800">
           Security & Data Protection
         </h2>
@@ -34,7 +34,7 @@ export default function SecuritySection() {
         {securityPoints.map((point, index) => (
           <li key={index} className="flex items-start  gap-1 text-gray-700">
             <div className="flex items-center justify-center gap-2">
-              <span className="mt-1 w-2 h-2 rounded-full bg-green-600 shrink-0" />
+              <span className="mt-1 w-2 h-2 rounded-full bg-green-400 shrink-0" />
               <span className="leading-relaxed">{point}</span>
             </div>
           </li>
