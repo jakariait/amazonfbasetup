@@ -329,7 +329,7 @@ export default function DataSecurity() {
 
           {/* Last Updated */}
           <div className="mt-8 text-center text-gray-500 text-sm">
-            Last Updated: [MONTH DAY, 2026]
+            Last Updated: September 11, 2026
           </div>
         </div>
       </section>
