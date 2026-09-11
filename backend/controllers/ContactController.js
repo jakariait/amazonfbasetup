@@ -1,8 +1,67 @@
 const contactService = require('../services/ContactService');
 
+const VALID_MARKETPLACES = [
+  'United States', 'Canada', 'Mexico', 'United Kingdom', 'European Union',
+  'United Arab Emirates', 'Saudi Arabia', 'Australia', 'Japan', 'India', 'Other',
+];
+
+const VALID_SERVICES = [
+  'Complete Account Management', 'Listings and Catalog', 'Inventory and FBA',
+  'Order Management', 'Returns and Refunds', 'Amazon Advertising',
+  'Pricing and Promotions', 'Account Health', 'Seller Support Cases',
+  'Appeals and Reinstatement Support', 'Buyer Messaging',
+  'Brand Analytics and A+ Content', 'Other',
+];
+
+const sanitizeString = (str) => {
+  if (typeof str !== 'string') return '';
+  return str.replace(/<[^>]*>/g, '').trim().slice(0, 500);
+};
+
 const createContact = async (req, res) => {
   try {
-    const contactData = req.body;
+    const body = req.body || {};
+
+    const fullName = body.fullName || '';
+    const emailAddress = body.emailAddress || '';
+    const companyName = body.companyName || '';
+    const country = body.country || '';
+    const marketplace = body.marketplace || '';
+    const service = body.service || '';
+    const message = body.message || '';
+    const phoneNumber = body.phoneNumber || '';
+    const sellerType = body.sellerType || '';
+    const preferredContact = body.preferredContact || '';
+
+    if (!fullName || !emailAddress || !companyName || !country || !marketplace || !service || !message) {
+      return res.status(400).json({ message: 'Missing required fields' });
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailAddress)) {
+      return res.status(400).json({ message: 'Invalid email address' });
+    }
+
+    if (!VALID_MARKETPLACES.includes(marketplace)) {
+      return res.status(400).json({ message: 'Invalid marketplace selection' });
+    }
+
+    if (!VALID_SERVICES.includes(service)) {
+      return res.status(400).json({ message: 'Invalid service selection' });
+    }
+
+    const contactData = {
+      fullName: sanitizeString(fullName),
+      emailAddress: sanitizeString(emailAddress),
+      companyName: sanitizeString(companyName),
+      country: sanitizeString(country),
+      marketplace,
+      service,
+      message: sanitizeString(message),
+      phoneNumber: phoneNumber ? sanitizeString(phoneNumber) : '',
+      sellerType: sellerType ? sanitizeString(sellerType) : '',
+      preferredContact: preferredContact || '',
+    };
+
     const contact = await contactService.createContact(contactData);
     res.status(201).json(contact);
   } catch (error) {
@@ -59,9 +118,6 @@ const deleteContact = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
-
-
-
 
 module.exports = {
   createContact,

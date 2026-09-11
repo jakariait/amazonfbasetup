@@ -17,18 +17,21 @@ import {
   DialogContent,
   DialogActions,
   Typography,
+  Chip,
+  Box,
 } from "@mui/material";
 import useAuthAdminStore from "@/store/AuthAdminStore";
 
 const columns = [
   { id: "serialNumber", label: "S.No.", minWidth: 50, align: "center" },
-  { id: "fullName", label: "Name", minWidth: 100 },
-  { id: "phoneNumber", label: "Phone Number", minWidth: 100 },
-  { id: "emailAddress", label: "Email Address", minWidth: 100 },
-  { id: "message", label: "Message", minWidth: 270 },
-  { id: "services", label: "Service", minWidth: 150 },
+  { id: "createdAt", label: "Date", minWidth: 100 },
+  { id: "fullName", label: "Name", minWidth: 120 },
+  { id: "emailAddress", label: "Email", minWidth: 150 },
+  { id: "companyName", label: "Company", minWidth: 120 },
+  { id: "marketplace", label: "Marketplace", minWidth: 110 },
+  { id: "service", label: "Service", minWidth: 150 },
   { id: "served", label: "Status", minWidth: 100, align: "center" },
-  { id: "actions", label: "Actions", minWidth: 100, align: "center" },
+  { id: "actions", label: "Actions", minWidth: 150, align: "center" },
 ];
 
 const ContactTable = () => {
@@ -41,7 +44,8 @@ const ContactTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  const [deleteTarget, setDeleteTarget] = useState(null); // holds contact to delete
+  const [deleteTarget, setDeleteTarget] = useState(null);
+  const [detailTarget, setDetailTarget] = useState(null);
 
   useEffect(() => {
     const fetchContacts = async () => {
@@ -52,7 +56,7 @@ const ContactTable = () => {
         if (!res.ok) throw new Error("Failed to fetch contacts");
         const data = await res.json();
         const sortedData = data.sort(
-          (a, b) => new Date(b.createdAt) - new Date(a.createdAt),
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
         );
         setContacts(sortedData);
       } catch (err) {
@@ -105,23 +109,32 @@ const ContactTable = () => {
       });
       if (!res.ok) throw new Error("Failed to delete contact");
       setContacts((prev) => prev.filter((c) => c._id !== deleteTarget._id));
-      setDeleteTarget(null); // close dialog
+      setDeleteTarget(null);
     } catch (err) {
       alert(err.message);
     }
   };
 
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "";
+    return new Date(dateStr).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
+
   return (
     <Paper
       sx={{
-        p: { xs: 1, sm: 2, md: 3 }, // Responsive padding
-        boxShadow: "0 10px 25px rgba(249, 115, 22, 0.1)", // orange-500 with alpha
-        border: "1px solid #fed7aa", // orange-200
-        m: { xs: 1, sm: 2 }, // Responsive margin
+        p: { xs: 1, sm: 2, md: 3 },
+        boxShadow: "0 10px 25px rgba(249, 115, 22, 0.1)",
+        border: "1px solid #fed7aa",
+        m: { xs: 1, sm: 2 },
       }}
     >
       <h1 className="border-l-4 border-orange-500 mb-6 pl-2 text-lg font-semibold">
-        Contact Request
+        Contact Inquiries
       </h1>
 
       {loading ? (
@@ -130,8 +143,8 @@ const ContactTable = () => {
         </div>
       ) : (
         <>
-          <TableContainer>
-            <Table>
+          <TableContainer sx={{ maxHeight: 600 }}>
+            <Table stickyHeader>
               <TableHead>
                 <TableRow>
                   {columns.map((col) => (
@@ -139,6 +152,7 @@ const ContactTable = () => {
                       key={col.id}
                       align={col.align}
                       style={{ minWidth: col.minWidth }}
+                      sx={{ fontWeight: "bold", bgcolor: "#fff7ed" }}
                     >
                       {col.label}
                     </TableCell>
@@ -155,7 +169,9 @@ const ContactTable = () => {
                           const value =
                             col.id === "serialNumber"
                               ? page * rowsPerPage + i + 1
-                              : contact[col.id];
+                              : col.id === "createdAt"
+                                ? formatDate(contact.createdAt)
+                                : contact[col.id];
 
                           if (col.id === "served") {
                             return (
@@ -163,6 +179,7 @@ const ContactTable = () => {
                                 <Button
                                   variant="contained"
                                   color={value ? "success" : "error"}
+                                  size="small"
                                   onClick={() =>
                                     handleToggleServed(contact._id)
                                   }
@@ -176,13 +193,29 @@ const ContactTable = () => {
                           if (col.id === "actions") {
                             return (
                               <TableCell key={col.id} align="center">
-                                <Button
-                                  variant="outlined"
-                                  color="error"
-                                  onClick={() => setDeleteTarget(contact)}
+                                <Box
+                                  sx={{
+                                    display: "flex",
+                                    gap: 1,
+                                    justifyContent: "center",
+                                  }}
                                 >
-                                  Delete
-                                </Button>
+                                  <Button
+                                    variant="outlined"
+                                    size="small"
+                                    onClick={() => setDetailTarget(contact)}
+                                  >
+                                    View
+                                  </Button>
+                                  <Button
+                                    variant="outlined"
+                                    color="error"
+                                    size="small"
+                                    onClick={() => setDeleteTarget(contact)}
+                                  >
+                                    Delete
+                                  </Button>
+                                </Box>
                               </TableCell>
                             );
                           }
@@ -198,7 +231,7 @@ const ContactTable = () => {
                 ) : (
                   <TableRow>
                     <TableCell colSpan={columns.length} align="center">
-                      No contacts available.
+                      No contact inquiries available.
                     </TableCell>
                   </TableRow>
                 )}
@@ -217,11 +250,65 @@ const ContactTable = () => {
         </>
       )}
 
+      {/* Detail View Dialog */}
+      <Dialog
+        open={!!detailTarget}
+        onClose={() => setDetailTarget(null)}
+        maxWidth="sm"
+        fullWidth
+      >
+        <DialogTitle sx={{ bgcolor: "#fff7ed", fontWeight: "bold" }}>
+          Contact Inquiry Details
+        </DialogTitle>
+        <DialogContent dividers>
+          {detailTarget && (
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2, pt: 1 }}>
+              <DetailRow label="Full Name" value={detailTarget.fullName} />
+              <DetailRow label="Business Email" value={detailTarget.emailAddress} />
+              <DetailRow label="Company / Brand" value={detailTarget.companyName} />
+              <DetailRow label="Country" value={detailTarget.country} />
+              <DetailRow label="Phone Number" value={detailTarget.phoneNumber || "Not provided"} />
+              <DetailRow label="Amazon Marketplace" value={detailTarget.marketplace} />
+              <DetailRow label="Service Required" value={detailTarget.service} />
+              <DetailRow label="Seller Type" value={detailTarget.sellerType || "Not provided"} />
+              <DetailRow label="Preferred Contact" value={detailTarget.preferredContact || "Not provided"} />
+              <DetailRow label="Submitted" value={formatDate(detailTarget.createdAt)} />
+              <DetailRow
+                label="Status"
+                value={
+                  <Chip
+                    label={detailTarget.served ? "Served" : "Pending"}
+                    color={detailTarget.served ? "success" : "error"}
+                    size="small"
+                  />
+                }
+              />
+              <Box>
+                <Typography variant="caption" color="text.secondary">
+                  Message
+                </Typography>
+                <Typography variant="body1" sx={{ mt: 0.5, whiteSpace: "pre-wrap" }}>
+                  {detailTarget.message}
+                </Typography>
+              </Box>
+            </Box>
+          )}
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setDetailTarget(null)} color="primary">
+            Close
+          </Button>
+        </DialogActions>
+      </Dialog>
+
       {/* Delete Confirmation Dialog */}
       <Dialog open={!!deleteTarget} onClose={() => setDeleteTarget(null)}>
         <DialogTitle>Confirm Delete</DialogTitle>
         <DialogContent>
-          <Typography>Are you sure you want to delete this contact?</Typography>
+          <Typography>
+            Are you sure you want to delete the inquiry from{" "}
+            <strong>{deleteTarget?.fullName}</strong>?
+          </Typography>
         </DialogContent>
         <DialogActions>
           <Button onClick={() => setDeleteTarget(null)} color="primary">
@@ -235,5 +322,16 @@ const ContactTable = () => {
     </Paper>
   );
 };
+
+const DetailRow = ({ label, value }) => (
+  <Box>
+    <Typography variant="caption" color="text.secondary">
+      {label}
+    </Typography>
+    <Typography variant="body1" sx={{ mt: 0.5 }}>
+      {value}
+    </Typography>
+  </Box>
+);
 
 export default ContactTable;
