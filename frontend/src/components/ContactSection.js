@@ -65,7 +65,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-semibold text-lg">Call Us</h4>
                     <p className="text-orange-100">
-                      <a href="tel:+12175955859">+1 (217) 595-5859</a>
+                      <a href="tel:+8801743214111">+880 1743-214111</a>
                     </p>
                   </div>
                 </div>
