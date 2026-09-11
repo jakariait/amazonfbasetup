@@ -22,6 +22,7 @@ const menuItems = [
     //   { name: "Meta", path: "/meta" },
     // ],
   },
+  { name: "Account Management", path: "/amazon-account-management" },
   { name: "Success Story", path: "/success-story" },
   { name: "FAQs", path: "/faqs" },
   { name: "Contact Us", path: "/contact-us" },

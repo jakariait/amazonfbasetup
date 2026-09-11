@@ -71,6 +71,10 @@ export default function FullServiceAmazonAgency() {
           description: "Proactive monitoring and issue resolution",
         },
         {
+          name: "Orders, Returns & Refunds",
+          description: "Order monitoring, return coordination, and authorized refund processing",
+        },
+        {
           name: "Policy Compliance Management",
           description: "Ensure adherence to Amazon's terms and policies",
         },
