@@ -16,13 +16,13 @@ export const metadata = {
 
 export default function PublicLayout({ children }) {
   return (
-    <>
-      <GoogleTagManager /> {/* GTM handled in client component */}
+    <div className="flex flex-col min-h-screen">
+      <GoogleTagManager />
       <Header />
-      {children}
+      <main className="flex-1">{children}</main>
       <ScrollToTop />
       <WhatsAppButton />
       <Footer />
-    </>
+    </div>
   );
 }
