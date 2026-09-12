@@ -192,6 +192,76 @@ export default function ClientSuccess() {
                 </p>
               </div>
 
+              {/* Reported Advertising Performance */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <BarChart3 className="w-5 h-5 text-orange-500 mr-2" />
+                  Reported Advertising Performance
+                </h3>
+                <p className="text-gray-500 text-sm mb-4">
+                  February 2025 - March 2025
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                          Metric
+                        </th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-700">
+                          Result (CAD)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-100">
+                        <td className="py-3 px-4 text-gray-600">
+                          Advertising spend
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-900 font-medium">
+                          61,234.49
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-100">
+                        <td className="py-3 px-4 text-gray-600">
+                          Advertising-attributed sales
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-900 font-medium">
+                          393,679.76
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-100">
+                        <td className="py-3 px-4 text-gray-600">
+                          Return on advertising spend
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-900 font-medium">
+                          6.43x
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 text-gray-600">
+                          Purchases reported
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-900 font-medium">
+                          5,216
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-gray-500 text-xs mt-4 leading-relaxed">
+                  The reported ROAS represents approximately CAD 6.43 in
+                  advertising-attributed sales for each CAD 1 spent on
+                  advertising. These figures are not total store revenue or
+                  profit and do not establish a before-and-after growth rate.
+                </p>
+                <p className="text-gray-400 text-xs mt-2 italic">
+                  Source: client-provided advertising dashboard for the stated
+                  reporting period. Brand name and figures published with
+                  permission.
+                </p>
+              </div>
+
               {/* Results Disclaimer */}
               <div className="bg-orange-500/5 border border-orange-500/20 rounded-lg p-4">
                 <p className="text-gray-600 text-xs leading-relaxed">
@@ -290,6 +360,77 @@ export default function ClientSuccess() {
                 <p className="text-gray-600 leading-relaxed">
                   Store and advertising management continue as part of the
                   active client engagement.
+                </p>
+              </div>
+
+              {/* Reported Advertising Performance */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <BarChart3 className="w-5 h-5 text-orange-500 mr-2" />
+                  Reported Advertising Performance
+                </h3>
+                <p className="text-gray-500 text-sm mb-4">
+                  February 2024 - March 2024
+                </p>
+                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-4">
+                  <p className="text-yellow-800 text-xs leading-relaxed">
+                    <strong>Currency verification pending:</strong> The client
+                    has confirmed GBP labels, but source screenshots display a
+                    dollar symbol. These figures are published under the
+                    client-confirmed GBP label pending final verification of
+                    report settings.
+                  </p>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b border-gray-200">
+                        <th className="text-left py-3 px-4 font-semibold text-gray-700">
+                          Metric
+                        </th>
+                        <th className="text-right py-3 px-4 font-semibold text-gray-700">
+                          Result
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-gray-100">
+                        <td className="py-3 px-4 text-gray-600">
+                          Advertising-attributed sales
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-900 font-medium">
+                          GBP 888,735.55
+                        </td>
+                      </tr>
+                      <tr className="border-b border-gray-100">
+                        <td className="py-3 px-4 text-gray-600">
+                          Advertising spend
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-900 font-medium">
+                          GBP 245,200.74
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-4 text-gray-600">
+                          Purchases reported
+                        </td>
+                        <td className="py-3 px-4 text-right text-gray-900 font-medium">
+                          57,126
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-gray-500 text-xs mt-4 leading-relaxed">
+                  These figures reflect advertising activity for the stated
+                  period. Advertising-attributed sales are not total store sales
+                  or profit. This snapshot does not demonstrate a
+                  before-and-after growth rate.
+                </p>
+                <p className="text-gray-400 text-xs mt-2 italic">
+                  Source: client-provided advertising dashboard for the stated
+                  reporting period. Brand name and figures published with
+                  permission.
                 </p>
               </div>
 

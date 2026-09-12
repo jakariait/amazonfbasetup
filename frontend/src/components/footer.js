@@ -10,7 +10,7 @@ const Footer = () => {
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about-us" },
     { label: "Amazon Account Management", href: "/amazon-account-management" },
-    { label: "Client Stories", href: "/success-story" },
+    { label: "Client Stories", href: "/client-success" },
     { label: "FAQs", href: "/faqs" },
     { label: "Contact Us", href: "/contact-us" },
   ];

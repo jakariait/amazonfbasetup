@@ -1,5 +1,12 @@
-import { redirect } from "next/navigation";
+import React from 'react';
+import ClientSuccess from "@/components/ClientSuccess";
 
-export default function ClientSuccessPage() {
-  redirect("/success-story");
-}
+const Page = () => {
+  return (
+    <div>
+      <ClientSuccess />
+    </div>
+  );
+};
+
+export default Page;

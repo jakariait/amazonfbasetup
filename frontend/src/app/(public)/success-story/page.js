@@ -1,17 +1,13 @@
 import React from "react";
-import ClientSuccess from "@/components/ClientSuccess";
+import CaseStudies from "@/components/CaseStudies";
 import { getHomePageTitle } from "@/utils/brand";
-
 export const metadata = {
-  title: `Amazon Client Stories | ${getHomePageTitle()}`,
-  description:
-    "Explore Revive7 and Drink Botanicals Ireland client engagements covering Amazon store management and advertising support in Canada and the UK.",
+  title: `Success Story | ${getHomePageTitle()}`,
 };
-
 const Page = () => {
   return (
     <div>
-      <ClientSuccess />
+      <CaseStudies />
     </div>
   );
 };
