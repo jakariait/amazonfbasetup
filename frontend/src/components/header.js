@@ -13,15 +13,15 @@ const menuItems = [
     name: "About Us",
     path: "/about-us",
   },
-  {
-    name: "Amazon",
-    path: "/amazon",
-    // subItems: [
-    //   { name: "Amazon", path: "/amazon" },
-    //   { name: "Shopify", path: "/shopify" },
-    //   { name: "Meta", path: "/meta" },
-    // ],
-  },
+  // {
+  //   name: "Amazon",
+  //   path: "/amazon",
+  //   subItems: [
+  //     { name: "Amazon", path: "/amazon" },
+  //     { name: "Shopify", path: "/shopify" },
+  //     { name: "Meta", path: "/meta" },
+  //   ],
+  // },
   { name: "Account Management", path: "/amazon-account-management" },
   { name: "Success Story", path: "/success-story" },
   { name: "FAQs", path: "/faqs" },

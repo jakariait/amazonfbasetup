@@ -420,22 +420,22 @@ export default function Home() {
           </h2>
           <div className="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg mb-8 leading-relaxed">
-            Our client-success stories document the client challenge, marketplace,
+            Our client stories document the client challenge, marketplace,
             engagement period, Seller Central services delivered, verified
-            measurement source, results, and an authorized client testimonial.
+            measurement source, and results.
             Results are specific to each engagement and are not guarantees.
           </p>
-          <Link href="/client-success">
+          <Link href="/success-story">
             <button
               onClick={() =>
                 handleClick(
-                  "View Verified Client Success Stories",
-                  "/client-success"
+                  "View Client Stories",
+                  "/success-story"
                 )
               }
               className="inline-flex items-center px-8 py-4 bg-orange-500 text-white font-bold rounded-lg hover:bg-orange-600 transition-colors transform hover:scale-105 shadow-lg cursor-pointer"
             >
-              View Verified Client Success Stories{" "}
+              View Client Stories{" "}
               <ExternalLink className="w-4 h-4 ml-2" />
             </button>
           </Link>
